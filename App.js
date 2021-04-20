@@ -1,4 +1,15 @@
+// import React from "react";
+// import Container from "./src/components/Container";
+
+// const App = () => <Container />;
+
+// export default App;
+
+
 import * as React from 'react';
+// import { Button } from 'react-bootstrap';
+// import BootstrapStyleSheet from 'react-native-bootstrap-styles';
+
 import {
   Text,
   View,
@@ -37,12 +48,13 @@ function Home() {
   );
 }
 
-function Rent() {
+function Listing() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Rent!</Text>
+      <Text>Listing!</Text>
     </View>
   );
+  
 }
 
 function Profile() {
@@ -119,10 +131,10 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Rent"
-        component={Rent}
+        name="Listing"
+        component={Listing}
         options={{
-          tabBarLabel: 'Rent',
+          tabBarLabel: 'Listing',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
