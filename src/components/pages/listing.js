@@ -10,8 +10,7 @@ import {
 // import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
 // const days = 7;
-const defaultPosts = [
-  {
+const defaultPosts = {
     id: 1,
     image:
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
@@ -26,8 +25,8 @@ const defaultPosts = [
     washer: 'Yes',
     Wifi: 'No',
     stove: 'No',
-  },
-];
+  };
+
 
 const Post = (props) => {
   const post = props.post;
@@ -37,10 +36,11 @@ const Post = (props) => {
   };
 
   return (
-    <View>
+    <View style={styles.containerListing}> 
       <Pressable onPress={goToPostPage} style={styles.container}>
         {/* Image  */}
-        <Image style={styles.image} source={{ uri: post.image }} />
+        <Image style={styles.image} source={{ uri:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80', }} />
 
         {/* Bed & Bedroom  */}
         <Text style={styles.bedrooms}>
@@ -75,6 +75,13 @@ export default Post;
 const styles = StyleSheet.create({
   container: {
     margin: 20,
+    backgroundColor: 'turquoise',
+  },
+  containerListing: {
+    flex: 1,
+    backgroundColor: '#003f5c',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
     width: '100%',
@@ -101,10 +108,6 @@ const styles = StyleSheet.create({
   },
   price: {
     fontWeight: 'bold',
-  },
-  totalPrice: {
-    color: '#5b5b5b',
-    textDecorationLine: 'underline',
   },
   searchButton: {
     backgroundColor: '#fff',

@@ -1,5 +1,14 @@
 import React from 'react';
-import { Text, View, Pressable, Dimensions, StyleSheet, TextInput, ScrollView, SafeAreaView } from 'react-native';
+import {
+  Text,
+  View,
+  Pressable,
+  Dimensions,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import Post from './listing';
 import { Fontisto } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -10,15 +19,15 @@ function Listing() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-    <ScrollView >
+      <ScrollView>
         <View style={styles.container}>
-         <Input placeholder= "ZipCode..."/>
-      </View>
-        
-      {fakePost.map((el) => (
-        <Post />
-      ))}
-    </ScrollView>
+          <Input placeholder="ZipCode..." />
+        </View>
+
+        {fakePost.map((el) => (
+          <Post />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -26,11 +35,13 @@ function Listing() {
 export default Listing;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: '#003f5c',
+    
+  },
   searchButton: {
     backgroundColor: '#fff',
     height: 60,

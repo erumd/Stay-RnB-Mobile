@@ -1,4 +1,3 @@
-// import React from "react";
 // import Container from "./src/components/Container";
 
 // const App = () => <Container />;
@@ -23,6 +22,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Listing from './src/components/pages/listingPage';
+// import Login from './src/components/pages/login'
 
 const image = {
   uri:

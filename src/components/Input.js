@@ -21,7 +21,9 @@ export default Input;
 const styles = StyleSheet.create({
   inputView: {
     width: '80%',
-    backgroundColor: '#465881',
+    // backgroundColor: '#465881',
+    backgroundColor: 'turquoise',
+
     borderRadius: 25,
     height: 50,
     marginBottom: 20,
@@ -30,6 +32,7 @@ const styles = StyleSheet.create({
   },
   inputText: {
     height: 50,
-    color: 'white',
+    color: '#003f5c',
+    fontWeight: 'bold',
   },
 });
