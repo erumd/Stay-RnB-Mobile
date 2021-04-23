@@ -136,7 +136,7 @@ function Profile() {
   // }
 
 
-      const ProfileStackScreen = ({navigation}) => {
+      function ProfileStackScreen = ({navigation}) => {
         headerRight: () => (
           <View style={{marginRight: 10}}>
             <MaterialCommunityIcons.Button

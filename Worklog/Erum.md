@@ -1,9 +1,18 @@
 ## Erum's Worklog and #TODO:
 
+## Tuesday April 21
 
+created listing card
+created profile page with add listing button and edit profile
+added edit profile page
+
+## Tuesday April 20
+
+Watched more youtube videos and created seperate .js screen files to organize code
 
 ## Tuesday April 13
-9pm-10:30 GROUP MEETING 
+
+9pm-10:30 GROUP MEETING
 
 documentation: https://www.npmjs.com/package/reactnative-ui-bootstrap
 
@@ -11,15 +20,17 @@ documentation: https://www.npmjs.com/package/reactnative-ui-bootstrap
 
 installed bootstrap package: "npm install react-bootstrap bootstrap"
 
-
 ## Monday April 12
+
 TODO:
 -seperate out files for each tab page (organize code). Watch Youtube videp to help me
 -Synch login/signup buttons
 -Create profile page
+
 - create rent page
 
   \*\*\*Stretch Goal( help back end):
+
 - after owner logs in
 
 ## Sunday April 11

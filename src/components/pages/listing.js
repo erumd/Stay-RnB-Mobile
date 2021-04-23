@@ -1,69 +1,74 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  Dimensions,
+  StyleSheet,
+} from 'react-native';
 // import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
-
 // const days = 7;
+const defaultPosts = [
+  {
+    id: 1,
+    image:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
+    bed: 2,
+    bathroom: 2,
+    type: 'Apartment',
+    shared: 'Yes',
+    Price: 1500,
+    dateAvailable: 'June 2021',
+    Pet: 'Yes',
+    Parking: 'Street',
+    washer: 'Yes',
+    Wifi: 'No',
+    stove: 'No',
+  },
+];
 
 const Post = (props) => {
   const post = props.post;
-
   const navigation = useNavigation();
-
   const goToPostPage = () => {
     navigation.navigate('Post', { postId: post.id });
   };
 
   return (
-   <View> 
-    <Pressable
-    style={styles.searchButton}
-    onPress={() => navigation.navigate('Destination Search')}>
-    <Fontisto name="search" size={25} color={'#f15454'} />
-    <Text style={styles.searchButtonText}>zipcode</Text>
-  </Pressable>
+    <View>
+      <Pressable onPress={goToPostPage} style={styles.container}>
+        {/* Image  */}
+        <Image style={styles.image} source={{ uri: post.image }} />
 
-    <Pressable onPress={goToPostPage} style={styles.container}>
-      {/* Image  */}
-      <Image style={styles.image} source={{ uri: post.image }} />
+        {/* Bed & Bedroom  */}
+        <Text style={styles.bedrooms}>
+          {post.bed} bed {post.bathroom} bathroom
+        </Text>
 
-      {/* Bed & Bedroom  */}
-      <Text style={styles.bedrooms}>
-        {post.bed} bed {post.bathroom} bathroom
-      </Text>
+        {/* Type & Description */}
+        <Text style={styles.description} numberOfLines={2}>
+          {post.type}
+        </Text>
 
-      {/* Type & Description */}
-      <Text style={styles.description} numberOfLines={2}>
-      {/* <Text > */}
-        {post.type}. {post.shared}
-      </Text>
-
-      {/*  price */}
-      {/* <Text style={styles.prices}> */}
-      {/* <Text style={styles.oldPrice}>${post.oldPrice}</Text> */}
-      <Text style={styles.price}> ${post.Price}/month </Text>
-      <Text style={styles.dateAvailable}> ${post.dateAvailable} </Text>
-      <Text style={styles.pet}> ${post.Pet} </Text>
-      <Text style={styles.parking}> ${post.Parking} </Text>
-      <Text style={styles.washer}> ${post.washer} </Text>
-      <Text style={styles.wifi}> ${post.Wifi} </Text>
-      <Text style={styles.stove}> ${post.stove} </Text>
-
-      {/* </Text> */}
-    </Pressable>
-   </View>
+        <Text style={styles.price}> ${post.Price}/month </Text>
+        <Text style={styles.dateAvailable}>
+          Available: {post.dateAvailable}{' '}
+        </Text>
+        <Text> Shared:{post.shared}</Text>
+        <Text style={styles.pet}> Pet: {post.Pet} </Text>
+        <Text style={styles.parking}> Parking: {post.Parking} </Text>
+        <Text style={styles.washer}> Washer/ Dryer: {post.washer} </Text>
+        <Text style={styles.wifi}> Wifi: {post.Wifi} </Text>
+        <Text style={styles.stove}> Stove:{post.stove} </Text>
+        {/* </Text> */}
+      </Pressable>
+    </View>
   );
 };
 
-// export default Post;
-//       const Listing = () => (
-//         <div>
-//           <h1>Listing</h1>
-//           <p>
-
-//           </p>
-//         </div>
-//       );
+Post.defaultProps = { post: defaultPosts };
 
 export default Post;
 

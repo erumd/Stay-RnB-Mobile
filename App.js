@@ -4,9 +4,10 @@
 // const App = () => <Container />;
 
 // export default App;
-
+// import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 
 import * as React from 'react';
+import Input from './src/components/Input'
 // import { Button } from 'react-bootstrap';
 // import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 
@@ -21,6 +22,8 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Listing from './src/components/pages/listingPage';
+
 const image = {
   uri:
     'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
@@ -48,15 +51,6 @@ function Home() {
   );
 }
 
-function Listing() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Listing!</Text>
-    </View>
-  );
-  
-}
-
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -69,14 +63,7 @@ function Login() {
   return (
     <View style={styles.containerLogin}>
       <Text style={styles.logo}>Stay RnB</Text>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Email..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => ({ email: text })}
-        />
-      </View>
+      <Input placeholder= "Email..."/>
 
       {/* <View style={styles.usernameView}>
         <TextInput
