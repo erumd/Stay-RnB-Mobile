@@ -10,27 +10,25 @@ import {
 } from 'react-native-paper';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import Share from 'react-native-share';
-
-
+import { useNavigation } from '@react-navigation/native';
 import files from '../assets/filesBase64';
 
-const ProfileScreen = () => {
+function Profile () {
+  const navigation = useNavigation();
+  // const myCustomShare = async() => {
+  //   // const shareOptions = {
+  //   //   url: files.appLogo,
+  //   //   // urls: [files.image1, files.image2]
+  //   // }
 
-  const myCustomShare = async() => {
-    const shareOptions = {
-      url: files.appLogo,
-      // urls: [files.image1, files.image2]
-    }
-
-    try {
-      const ShareResponse = await Share.open(shareOptions);
-      console.log(JSON.stringify(ShareResponse));
-    } catch(error) {
-      console.log('Error => ', error);
-    }
-  };
+  //   try {
+  //     const ShareResponse = await Share.open(shareOptions);
+  //     console.log(JSON.stringify(ShareResponse));
+  //   } catch(error) {
+  //     console.log('Error => ', error);
+  //   }
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -102,8 +100,8 @@ const ProfileScreen = () => {
 
 
 
-function Profile() {
-    return (
+// function Profile() {
+//     return (
       // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       //   <Text>Profile!</Text>
       // </View>
@@ -136,19 +134,19 @@ function Profile() {
   // }
 
 
-      function ProfileStackScreen = ({navigation}) => {
-        headerRight: () => (
-          <View style={{marginRight: 10}}>
-            <MaterialCommunityIcons.Button
-              name="account-edit"
-              size={25}
-              backgroundColor={colors.background}
-              color={colors.text}
-              onPress={() => navigation.navigate('EditProfile')}
-            />
-          </View>
-        ),
-      };
+      // function ProfileStackScreen = ({navigation}) => {
+      //   headerRight: () => (
+      //     <View style={{marginRight: 10}}>
+      //       <MaterialCommunityIcons.Button
+      //         name="account-edit"
+      //         size={25}
+      //         backgroundColor={colors.background}
+      //         color={colors.text}
+      //         onPress={() => navigation.navigate('EditProfile')}
+      //       />
+      //     </View>
+      //   ),
+      // };
 
 
   export default Profile;

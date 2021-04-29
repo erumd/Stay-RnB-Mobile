@@ -16,7 +16,8 @@ const image = {
     { id: 2, name: 'Owner' },
   ];
 
-  function Home() {
+  function Home(props) {
+    // const home = props.post;
     return (
       <View style={styles.container}>
         <ImageBackground source={image} style={styles.image}>
@@ -32,4 +33,90 @@ const image = {
     );
   }
 
-  export default Home extends Container;
+  export default Home;
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: 'column',
+      justifyContent: 'center',
+    },
+    containerLogin: {
+      flex: 1,
+      backgroundColor: '#003f5c',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    logo: {
+      fontWeight: 'bold',
+      fontFamily: 'Cochin',
+      fontSize: 50,
+      color: 'turquoise',
+      marginBottom: 40,
+    },
+    image: {
+      flex: 1,
+      resizeMode: 'cover',
+      justifyContent: 'center',
+    },
+    homeTitle: {
+      color: 'turquoise',
+      fontSize: 50,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      backgroundColor: '#000000a0',
+      fontFamily: 'Cochin',
+    },
+    title: {
+      fontFamily: 'Cochin',
+    },
+    loginBtn: {
+      width: '80%',
+      backgroundColor: 'turquoise',
+      borderRadius: 25,
+      height: 50,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 40,
+      marginBottom: 10,
+    },
+
+    userBtn: {
+      width: '80%',
+      backgroundColor: 'turquoise',
+      borderRadius: 25,
+      height: 50,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 40,
+      marginBottom: 10,
+    },
+    userText: {
+      color: 'white',
+      fontWeight: 'bold',
+    },
+    ownerBtn: {
+      width: '80%',
+      backgroundColor: '#003f5c',
+      borderRadius: 25,
+      height: 50,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 40,
+      marginBottom: 10,
+    },
+    ownerText: {
+      color: 'white',
+      fontWeight: 'bold',
+    },
+    inputView: {
+      width: '80%',
+      backgroundColor: '#465881',
+      borderRadius: 25,
+      height: 50,
+      marginBottom: 20,
+      justifyContent: 'center',
+      padding: 20,
+    },
+   
+  });

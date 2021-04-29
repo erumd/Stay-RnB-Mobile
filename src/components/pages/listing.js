@@ -10,14 +10,16 @@ import {
 // import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
 // const days = 7;
-const defaultPosts = {
-    id: 1,
+const defaultPosts = 
+  {
+    id: 0,
     image:
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
     bed: 2,
     bathroom: 2,
     type: 'Apartment',
-    shared: 'Yes',
+    zipcode: 77098,
+    shared: ' Yes',
     Price: 1500,
     dateAvailable: 'June 2021',
     Pet: 'Yes',
@@ -25,7 +27,9 @@ const defaultPosts = {
     washer: 'Yes',
     Wifi: 'No',
     stove: 'No',
-  };
+    owner: 'Link to Profile',
+  };  
+
 
 
 const Post = (props) => {
@@ -38,23 +42,19 @@ const Post = (props) => {
   return (
     <View style={styles.containerListing}> 
       <Pressable onPress={goToPostPage} style={styles.container}>
-        {/* Image  */}
         <Image style={styles.image} source={{ uri:
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80', }} />
-
-        {/* Bed & Bedroom  */}
         <Text style={styles.bedrooms}>
           {post.bed} bed {post.bathroom} bathroom
         </Text>
-
-        {/* Type & Description */}
-        <Text style={styles.description} numberOfLines={2}>
+        <Text style={styles.description} numberOfLines={2}> 
           {post.type}
         </Text>
-
+        <Text style={styles.zipcode}> Zipcode:{post.zipcode} </Text>
         <Text style={styles.price}> ${post.Price}/month </Text>
-        <Text style={styles.dateAvailable}>
-          Available: {post.dateAvailable}{' '}
+        
+        <Text style={styles.dateAvailable}> 
+           Available: {post.dateAvailable}{' '}
         </Text>
         <Text> Shared:{post.shared}</Text>
         <Text style={styles.pet}> Pet: {post.Pet} </Text>
@@ -62,9 +62,12 @@ const Post = (props) => {
         <Text style={styles.washer}> Washer/ Dryer: {post.washer} </Text>
         <Text style={styles.wifi}> Wifi: {post.Wifi} </Text>
         <Text style={styles.stove}> Stove:{post.stove} </Text>
+        <Text style={styles.owner}> Contact Owner:{post.owner} </Text>
+
         {/* </Text> */}
       </Pressable>
     </View>
+
   );
 };
 
@@ -98,15 +101,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 26,
   },
-  prices: {
+  zipcode: {
     fontSize: 18,
-    marginVertical: 10,
-  },
-  oldPrice: {
-    color: '#5b5b5b',
-    textDecorationLine: 'line-through',
+    lineHeight: 26,
   },
   price: {
+    fontWeight: 'bold',
+  },
+  owner: {
+    fontSize: 14,
+    lineHeight: 26,
     fontWeight: 'bold',
   },
   searchButton: {

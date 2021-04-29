@@ -4,9 +4,10 @@
 
 // export default App;
 // import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
-
+import 'react-native-gesture-handler';
 import * as React from 'react';
 import Input from './src/components/Input'
+import {Profile2} from './src/components/pages/profile2';
 // import { Button } from 'react-bootstrap';
 // import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 
@@ -34,6 +35,21 @@ const items = [
   { id: 1, name: 'User' },
   { id: 2, name: 'Owner' },
 ];
+
+const App = () => {
+  {
+    return (
+     
+            <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
+
+      
+    );
+  }
+}
+
+
 
 function Home() {
   return (
@@ -64,6 +80,7 @@ function Login() {
     <View style={styles.containerLogin}>
       <Text style={styles.logo}>Stay RnB</Text>
       <Input placeholder= "Email..."/>
+      
 
       {/* <View style={styles.usernameView}>
         <TextInput
@@ -83,10 +100,11 @@ function Login() {
           onChangeText={(text) => ({ password: text })}
         />
       </View>
+      
 
-      <TouchableOpacity>
+      {/* <TouchableOpacity>
         <Text style={styles.forgot}>Forgot Password?</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
@@ -246,10 +264,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
-  );
-}
+export default App; 

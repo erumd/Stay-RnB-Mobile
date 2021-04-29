@@ -13,12 +13,13 @@ import Post from './listing';
 import { Fontisto } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Input from '../Input';
-const fakePost = [1, 2];
+const fakePost = [0,1];
 
 function Listing() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
+      {/* <ScrollView horizontal={true}> */}
       <ScrollView>
         <View style={styles.container}>
           <Input placeholder="ZipCode..." />
@@ -40,7 +41,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#003f5c',
-    
   },
   searchButton: {
     backgroundColor: '#fff',
