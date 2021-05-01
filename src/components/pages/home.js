@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container } from "native-base";
 
+
 const image = {
     uri:
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
@@ -24,9 +25,10 @@ const image = {
           <Text style={styles.homeTitle}>Stay RnB</Text>
           <TouchableOpacity style={styles.userBtn}>
             <Text style={styles.userText}>USER</Text>
+            <Button>Button</Button>
           </TouchableOpacity>
           <TouchableOpacity style={styles.ownerBtn}>
-            <Text style={styles.ownerText}>OWNER</Text>
+            <Text style={styles.ownerText } >OWNER</Text>
           </TouchableOpacity>
         </ImageBackground>
       </View>
@@ -34,6 +36,8 @@ const image = {
   }
 
   export default Home;
+
+  
 
   const styles = StyleSheet.create({
     container: {
@@ -100,10 +104,11 @@ const image = {
       backgroundColor: '#003f5c',
       borderRadius: 25,
       height: 50,
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignItems: 'right',
+      justifyContent: 'right',
       marginTop: 40,
       marginBottom: 10,
+      
     },
     ownerText: {
       color: 'white',

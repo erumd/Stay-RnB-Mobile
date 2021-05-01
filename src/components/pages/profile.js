@@ -1,19 +1,26 @@
-import React from 'react';
-
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { View, SafeAreaView, StyleSheet, ScrollView} from 'react-native';
 import {
   Avatar,
   Title,
-  Caption,
   Text,
+  Caption,
+  Pressable,
   TouchableRipple,
+  Card, 
+  Paragraph,
 } from 'react-native-paper';
+
+import React from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Share from 'react-native-share';
 import { useNavigation } from '@react-navigation/native';
 // import files from '../assets/filesBase64';
 // import EditProfileScreen from './EditProfile';
+// import { Card } from 'react-native-elements';
+// import { Card, ListItem, Button } from 'react-native-elements'
+
+
 
 function Profile() {
   const navigation = useNavigation();
@@ -33,6 +40,7 @@ function Profile() {
 
   return (
     <SafeAreaView style={styles.container}>
+        <ScrollView>
       <View style={styles.userInfoSection}>
         <View style={{ flexDirection: 'row', marginTop: 15 }}>
           <Avatar.Image
@@ -107,9 +115,53 @@ function Profile() {
       </View>
 
       <View style={styles.menuWrapper}></View>
+
+
+      {/* <View style={styles.container}>
+                <SingleCardView
+                    elevation={1}
+                    shadowColor="rgb(50,50,50)"
+                    shadowOpacity={1}
+                    marginTop={150}
+                    height={200}
+                >
+                    <Text style={{ padding: 10, fontSize: 18 }}>
+                        This is a simple card!
+                    </Text>
+                </SingleCardView>
+            </View> */}
+
+    <Card>
+        <Card.Content style={styles.card}>
+        <Card.Cover source={{ uri: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80/700' }} />
+          <Title name='address'>6100 Main St, Houston, TX 77005</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+
+      <Card>
+        <Card.Content>
+        <Card.Cover source={{ uri: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1492&q=80' }} />
+          <Title name='address'>6245 Main St, Houston, TX 77010</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+     
+      </ScrollView>
     </SafeAreaView>
+
+
+    
+
+    
+
+    
   );
+
+  
 }
+
+
 
 // function Profile() {
 //     return (
@@ -163,6 +215,10 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // backgroundColor: 'turquoise',
+  },
+  card:{
+    
   },
   userInfoSection: {
     paddingHorizontal: 30,
