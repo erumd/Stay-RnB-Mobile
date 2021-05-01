@@ -7,7 +7,6 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import Input from './src/components/Input';
-import Profile2 from './src/components/pages/profile2';
 import Profile from './src/components/pages/profile';
 // import { Button } from 'react-bootstrap';
 // import BootstrapStyleSheet from 'react-native-bootstrap-styles';
