@@ -6,8 +6,9 @@
 // import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import Input from './src/components/Input'
-import {Profile2} from './src/components/pages/profile2';
+import Input from './src/components/Input';
+import Profile2 from './src/components/pages/profile2';
+import Profile from './src/components/pages/profile';
 // import { Button } from 'react-bootstrap';
 // import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 
@@ -39,17 +40,12 @@ const items = [
 const App = () => {
   {
     return (
-     
-            <NavigationContainer>
+      <NavigationContainer>
         <MyTabs />
       </NavigationContainer>
-
-      
     );
   }
-}
-
-
+};
 
 function Home() {
   return (
@@ -67,20 +63,19 @@ function Home() {
   );
 }
 
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
+// function Profile() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Profile!</Text>
+//     </View>
+//   );
+// }
 
 function Login() {
   return (
     <View style={styles.containerLogin}>
       <Text style={styles.logo}>Stay RnB</Text>
-      <Input placeholder= "Email..."/>
-      
+      <Input placeholder="Email..." />
 
       {/* <View style={styles.usernameView}>
         <TextInput
@@ -100,7 +95,6 @@ function Login() {
           onChangeText={(text) => ({ password: text })}
         />
       </View>
-      
 
       {/* <TouchableOpacity>
         <Text style={styles.forgot}>Forgot Password?</Text>
@@ -264,4 +258,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App; 
+export default App;
