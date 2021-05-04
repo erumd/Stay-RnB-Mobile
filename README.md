@@ -2,9 +2,9 @@
 
 ## Installation
 
-1. clone repo
-2. expo init AwesomeProject
-3. npm start OR expo start
+1. Clone repo.
+2. Cd into directory.
+3. In terminal "npm start" OR "expo start"
 
 ## Deployment
 
