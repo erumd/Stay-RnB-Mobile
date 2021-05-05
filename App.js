@@ -78,7 +78,7 @@ function Home() {
           <Text style={styles.userText}>USER</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.ownerBtn}>
-          <Text style={styles.ownerText}>OWNER</Text>
+          <Text style={styles.ownerText}>Host</Text>
         </TouchableOpacity>
       </ImageBackground>
     </View>
@@ -208,14 +208,14 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   homeTitle: {
     color: 'turquoise',
     fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: '#000000a0',
+    backgroundColor: '#003f5c',
     fontFamily: 'Cochin',
   },
   title: {
