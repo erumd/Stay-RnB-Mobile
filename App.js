@@ -23,7 +23,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Listing from './src/components/pages/listingPage';
-// import Login from './src/components/pages/login'
+import Login from './src/components/pages/login';
+import Signup from './src/components/pages/signup';
+import { createStackNavigator } from '@react-navigation/stack';
+import AddListing from './src/components/pages/addListing';
 
 const image = {
   uri:
@@ -35,6 +38,26 @@ const items = [
   { id: 1, name: 'User' },
   { id: 2, name: 'Owner' },
 ];
+
+const AuthStack = createStackNavigator();
+function AuthStackScreen() {
+  return (
+    <AuthStack.Navigator>
+      <AuthStack.Screen name="Login" component={Login} />
+      <AuthStack.Screen name="Signup" component={Signup} />
+    </AuthStack.Navigator>
+  );
+}
+
+const ProfileStack = createStackNavigator();
+function ProfileStackScreen() {
+  return (
+    <ProfileStack.Navigator>
+      <ProfileStack.Screen name="Profile" component={Profile} />
+      <ProfileStack.Screen name="AddListing" component={AddListing} />
+    </ProfileStack.Navigator>
+  );
+}
 
 const App = () => {
   {
@@ -70,43 +93,43 @@ function Home() {
 //   );
 // }
 
-function Login() {
-  return (
-    <View style={styles.containerLogin}>
-      <Text style={styles.logo}>Stay RnB</Text>
-      <Input placeholder="Email..." />
+// function Login() {
+//   return (
+//     <View style={styles.containerLogin}>
+//       <Text style={styles.logo}>Stay RnB</Text>
+//       <Input placeholder="Email..." />
 
-      {/* <View style={styles.usernameView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Username..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ username: text })}
-        />
-      </View> */}
+//       {/* <View style={styles.usernameView}>
+//         <TextInput
+//           style={styles.inputText}
+//           placeholder="Username..."
+//           placeholderTextColor="#003f5c"
+//           onChangeText={(text) => this.setState({ username: text })}
+//         />
+//       </View> */}
 
-      <View style={styles.inputView}>
-        <TextInput
-          secureTextEntry
-          style={styles.inputText}
-          placeholder="Password..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => ({ password: text })}
-        />
-      </View>
+//       <View style={styles.inputView}>
+//         <TextInput
+//           secureTextEntry
+//           style={styles.inputText}
+//           placeholder="Password..."
+//           placeholderTextColor="#003f5c"
+//           onChangeText={(text) => ({ password: text })}
+//         />
+//       </View>
 
-      {/* <TouchableOpacity>
-        <Text style={styles.forgot}>Forgot Password?</Text>
-      </TouchableOpacity> */}
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>LOGIN</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.loginText}>Signup</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+//       {/* <TouchableOpacity>
+//         <Text style={styles.forgot}>Forgot Password?</Text>
+//       </TouchableOpacity> */}
+//       <TouchableOpacity style={styles.loginBtn}>
+//         <Text style={styles.loginText}>LOGIN</Text>
+//       </TouchableOpacity>
+//       <TouchableOpacity>
+//         <Text style={styles.loginText}>Signup</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// }
 
 const Tab = createBottomTabNavigator();
 
@@ -140,7 +163,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileStackScreen}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
@@ -150,7 +173,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Login"
-        component={Login}
+        component={AuthStackScreen}
         options={{
           tabBarLabel: 'Login',
           tabBarIcon: ({ color, size }) => (
@@ -185,6 +208,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+    alignItems: 'center'
   },
   homeTitle: {
     color: 'turquoise',
