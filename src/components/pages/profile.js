@@ -43,13 +43,13 @@ function Profile() {
         <ScrollView>
       <View style={styles.userInfoSection}>
         <View style={{ flexDirection: 'row', marginTop: 15 }}>
-          <Avatar.Image
+          {/* <Avatar.Image
             source={{
               uri: 'https://api.adorable.io/avatars/80/abott@adorable.png',
             }}
             size={80}
-          />
-          <View style={{ marginLeft: 20 }}>
+          /> */}
+          <View style={{ marginLeft: 20}}>
             <Title
               style={[
                 styles.title,

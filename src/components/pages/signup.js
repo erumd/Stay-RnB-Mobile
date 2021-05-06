@@ -14,6 +14,26 @@ function signUp() {
   return (
     <View style={styles.containerLogin}>
       <Text style={styles.logo}>Stay RnB</Text>
+
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.inputText}
+          placeholder="First Name..."
+          placeholderTextColor="#003f5c"
+          onChangeText={(text) => this.setState({ username: text })}
+        />
+      </View>
+
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.inputText}
+          placeholder="Last Name..."
+          placeholderTextColor="#003f5c"
+          onChangeText={(text) => this.setState({ username: text })}
+        />
+      </View>
+
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
