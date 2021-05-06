@@ -3,9 +3,11 @@ import { useNavigation } from '@react-navigation/native';
 import {
   View,
   Text,
+  TextInput,
   Image,
   Pressable,
   Dimensions,
+  TouchableOpacity,
   StyleSheet,
 } from 'react-native';
 
@@ -41,12 +43,12 @@ function login() {
      
         
          <TouchableOpacity>
-            <Text style={styles.forgot}>Forgot Password?</Text>
+            {/* <Text style={styles.forgot}>Forgot Password?</Text> */}
           </TouchableOpacity>
           <TouchableOpacity style={styles.loginBtn}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress= { () => navigation.navigate('Signup')} >
             <Text style={styles.loginText}>Signup</Text>
           </TouchableOpacity>
       </View>
