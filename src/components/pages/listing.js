@@ -71,7 +71,7 @@ const Post = (props) => {
   );
 };
 
-Post.defaultProps = { post: defaultPosts };
+// Post.defaultProps = { post: defaultPosts };
 
 export default Post;
 

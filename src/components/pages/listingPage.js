@@ -13,7 +13,26 @@ import Post from './listing';
 import { Fontisto } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Input from '../Input';
-const fakePost = [0,1];
+const defaultPosts = 
+  {
+    id: 0,
+    image:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
+    bed: 2,
+    bathroom: 2,
+    type: 'Apartment',
+    zipcode: 77098,
+    shared: ' Yes',
+    Price: 1500,
+    dateAvailable: 'June 2021',
+    Pet: 'Yes',
+    Parking: 'Street',
+    washer: 'Yes',
+    Wifi: 'No',
+    stove: 'No',
+    owner: 'Link to Profile',
+  }; 
+const fakePost = [defaultPosts];
 
 function Listing() {
   const navigation = useNavigation();
@@ -25,8 +44,9 @@ function Listing() {
           <Input placeholder="ZipCode..." />
         </View>
 
-        {fakePost.map((el) => (
-          <Post />
+        {fakePost.map((el, i) => (
+          <Post key={i} post={el} />
+
         ))}
       </ScrollView>
     </SafeAreaView>

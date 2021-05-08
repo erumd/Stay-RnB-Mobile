@@ -102,6 +102,5 @@ typings/
 
 # TernJS port file
 .tern-port
-
+.expo
 .expo/
-.expo-shared/
