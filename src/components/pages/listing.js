@@ -62,6 +62,7 @@ const Post = (props) => {
         <Text style={styles.washer}> Washer/ Dryer: {post.washer} </Text>
         <Text style={styles.wifi}> Wifi: {post.Wifi} </Text>
         <Text style={styles.stove}> Stove:{post.stove} </Text>
+        <Text style={styles.smoking}> Smoking:{post.smoking} </Text>
         <Text style={styles.owner}> Contact Owner:{post.owner} </Text>
 
         {/* </Text> */}

@@ -2,7 +2,8 @@
 
 import React from 'react';
 // import NativeForms from 'native-forms-react';
-import { DataForm, Field } from '../wrappers/DataForms';
+import { DataForm, Field } from '../../wrappers/DataForms';
+
 
 // class Example extends React.Component {
 // function Example {
