@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Switch,
+  Alert,
 } from 'react-native';
 
 function signUp() {
@@ -111,8 +112,15 @@ function signUp() {
     
 
       <TouchableOpacity></TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>SIGNUP</Text>
+      <TouchableOpacity 
+      style={styles.loginBtn}
+      onPress={() => Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')}
+   
+      >
+        <Text style={styles.loginText}>SIGNUP
+       
+
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity>
         {/* <Text style={styles.loginText}>LOGIN</Text> */}
