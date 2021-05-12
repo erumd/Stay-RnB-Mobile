@@ -59,7 +59,7 @@ function Profile() {
               >
                 John Doe
               </Title>
-              <Caption style={styles.caption}>@j_doe</Caption>
+              <Caption style={styles.caption}>@user_name</Caption>
             </View>
           </View>
         </View>
@@ -82,7 +82,14 @@ function Profile() {
             <Text style={{ color: '#777777', marginLeft: 20 }}>
               john_doe@email.com
             </Text>
+            
           </View>
+          {/* <View style={styles.row}>
+            <Icon name="key" color="#777777" size={20} />
+            <Text style={{ color: 'black', marginLeft: 20, fontWeight: '900', }}>
+              Host Access
+            </Text>
+          </View> */}
         </View>
 
         <View style={styles.infoBoxWrapper}>
@@ -107,8 +114,8 @@ function Profile() {
             {/* <Title>Edit Post</Title> */}
             <TouchableRipple onPress={() => {}}>
               <View style={styles.menuItem}>
-                <Icon name="account-check-outline" color="#FF6347" size={30} />
-                <Text style={styles.menuItemText}>Edit Profile </Text>
+                <Icon name="account-check-outline" color="#FF6347" size={30} fontWeight='900' />
+                <Text style={styles.menuItemText}>Host Access </Text>
               </View>
             </TouchableRipple>
           </View>
@@ -210,12 +217,14 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'turquoise',
+    backgroundColor: 'turquoise',
   },
   card: {},
   userInfoSection: {
     paddingHorizontal: 30,
     marginBottom: 25,
+    color: 'turquoise',
+   
   },
   title: {
     fontSize: 24,
@@ -229,6 +238,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginBottom: 10,
+    
   },
   infoBoxWrapper: {
     borderBottomColor: '#dddddd',
@@ -237,6 +247,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     flexDirection: 'row',
     height: 100,
+    color: 'turquoise',
   },
   infoBox: {
     width: '50%',
