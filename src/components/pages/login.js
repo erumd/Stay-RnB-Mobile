@@ -1,18 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigation } from '@react-navigation/native';
 import {
   View,
   Text,
   TextInput,
+  CheckBox,
   Image,
   Pressable,
   Dimensions,
   TouchableOpacity,
   StyleSheet,
+  Switch,
 } from 'react-native';
 
+
+
+
+
+
+
+
+
 function login() {
+  const [isSelected, setSelection] = useState(false);
   const navigation = useNavigation();
+  // const [selectedValue, setSelectedValue] = useState("yes");
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
     return (
       <View style={styles.containerLogin}> 
       <Text style={styles.logo}>Stay RnB</Text>
@@ -40,6 +55,62 @@ function login() {
               placeholderTextColor="#003f5c"
               onChangeText={text => this.setState({password:text})}/>
           </View>
+
+
+      {/* checkbox */}
+        {/* <View style={styles.checkboxContainer}>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={styles.checkbox}
+            />
+            <Text style={styles.label}>User</Text>
+
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={styles.checkbox}
+            />
+            <Text style={styles.label}>Host</Text>
+        </View> */}
+
+        <View>
+        <Text style={styles.toggleUser}> User 
+      <Switch
+        trackColor={{ false: "#767577", true: "turquoise" }}
+        thumbColor={isEnabled ? "#f5dd4b" : "#465881"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+      </Text>
+        </View>
+
+        <View>
+        <Text style={styles.toggleHost}> Host
+      <Switch
+        trackColor={{ false: "#767577", true: "turquoise" }}
+        thumbColor={isEnabled ? "#f5dd4b" : "#465881"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+      </Text>
+        </View>
+        
+
+
+          {/* <View style={styles.loginAs}>
+                <Text style={styles.loginText}>Login as</Text>
+                <CheckBox checked={true} />
+                <Body>
+                  <Text style={styles.cboxText}>Admin</Text>
+                </Body>
+                <CheckBox checked={false} />
+                <Body>
+                  <Text style={styles.cboxText}>User</Text>
+                </Body>
+              </View> */}
      
         
          <TouchableOpacity>
@@ -62,6 +133,7 @@ function login() {
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'center',
+      // alignItems: 'left',
     },
     containerLogin: {
       flex: 1,
@@ -133,4 +205,27 @@ function login() {
       color: 'white',
       fontSize: 11,
     },
+    checkboxContainer: {
+      flexDirection: "row",
+      marginBottom: 20,
+    },
+    checkbox: {
+    alignSelf: "center",
+    },
+    label: {
+      margin: 8,
+      color: "turquoise",
+  },
+  toggleUser: {
+    color: 'turquoise',
+      fontWeight: 'bold',
+      fontSize: 20,
+      
+  },
+  toggleHost: {
+    color: 'turquoise',
+      fontWeight: 'bold',
+      fontSize: 20,
+  },
+
   });

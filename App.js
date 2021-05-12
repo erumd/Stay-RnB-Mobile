@@ -26,7 +26,7 @@ import Listing from './src/components/pages/listingPage';
 import Login from './src/components/pages/login';
 import Signup from './src/components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
-import AddListing from './src/components/pages/addListing';
+import AddListing from './src/components/pages/Listing/addListing';
 
 const image = {
   uri:
@@ -139,6 +139,10 @@ function MyTabs() {
       initialRouteName="Feed"
       tabBarOptions={{
         activeTintColor: '#e91e63',
+        inactiveColor: "#95a5a6",
+        style: {
+          backgroundColor: 'white',
+      },
       }}
     >
       <Tab.Screen
