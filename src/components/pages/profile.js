@@ -8,6 +8,7 @@ import {
   TouchableRipple,
   Card,
   Paragraph,
+  TextInput,
 } from 'react-native-paper';
 
 import React from 'react';
@@ -22,6 +23,9 @@ import { useNavigation } from '@react-navigation/native';
 
 function Profile() {
   const navigation = useNavigation();
+  const [number, onChangeNumber] = React.useState(null);
+  const [email, onChangeEmail] = React.useState(null);
+  const [city, onChangeCity] = React.useState(null);
   // const myCustomShare = async() => {
   //   // const shareOptions = {
   //   //   url: files.appLogo,
@@ -66,22 +70,46 @@ function Profile() {
 
         <View style={styles.userInfoSection}>
           <View style={styles.row}>
-            <Icon name="map-marker-radius" color="#777777" size={20} />
-            <Text style={{ color: '#777777', marginLeft: 20 }}>
+            {/* <View></View> */}
+            <Icon name="map-marker-radius" color="#777777" size={30} />
+            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
               Houston, TX
-            </Text>
+            </Text> */}
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeCity}
+            value={city}
+            placeholder="City, State"
+            keyboardType="city"
+          />
           </View>
           <View style={styles.row}>
-            <Icon name="phone" color="#777777" size={20} />
-            <Text style={{ color: '#777777', marginLeft: 20 }}>
+            <Icon name="phone" color="#777777" size={30} />
+            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
               +1-123-456-7890
-            </Text>
+            </Text> */}
+             <TextInput
+            style={styles.input}
+            onChangeText={onChangeNumber}
+            value={number}
+            placeholder="Phone Number"
+            keyboardType="numeric"
+          />
           </View>
+          
           <View style={styles.row}>
-            <Icon name="email" color="#777777" size={20} />
-            <Text style={{ color: '#777777', marginLeft: 20 }}>
+            <Icon name="email" color="#777777" size={30} />
+            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
               john_doe@email.com
-            </Text>
+            </Text> */}
+
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeEmail}
+            value={email}
+            placeholder="Email"
+            keyboardType="email"
+          />
             
           </View>
           {/* <View style={styles.row}>
@@ -268,5 +296,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 16,
     lineHeight: 26,
+  },
+  input: {
+    height: 30,
+    margin: 10,
+    borderWidth: 1,
+    marginLeft: 20,
+    
+    
   },
 });
