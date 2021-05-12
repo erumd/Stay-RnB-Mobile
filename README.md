@@ -11,3 +11,24 @@
 https://expo.io/@erumdhukka/projects/stayrnb
 
 https://github.com/erumd/Stay-RnB-Mobile
+
+# Desktop Version
+Repo: https://github.com/code-monkey713/Stay-RnB-Web
+
+# Server-Side
+Repo: https://github.com/Joeseff6/Stay-RnB-Backend
+
+# Team members
+Erum Dhukka - Mobile application development
+  - GitHub: https://github.com/erumd
+  - Email: erumdhukka531@gmail.com
+
+Joseph Soria - Server-side development
+  - Deploy: https://stay-rnb-server.herokuapp.com/
+  - GitHub: https://github.com/Joeseff6
+  - Email: josephsoria6@gmail.com
+
+Tony Tran - Desktop/React application development/Project Manager
+  - GitHub: https://github.com/Joeseff6
+  - Email: josephsoria6@gmail.com
+
