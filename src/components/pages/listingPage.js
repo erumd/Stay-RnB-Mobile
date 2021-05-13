@@ -30,7 +30,9 @@ const defaultPosts =
     washer: 'Yes',
     Wifi: 'No',
     stove: 'No',
+    smoking: 'No',
     owner: 'Link to Profile',
+    
   }; 
 const fakePost = [defaultPosts];
 

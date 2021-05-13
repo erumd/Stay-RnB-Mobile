@@ -8,6 +8,7 @@ import {
   TouchableRipple,
   Card,
   Paragraph,
+  TextInput,
 } from 'react-native-paper';
 
 import React from 'react';
@@ -22,6 +23,9 @@ import { useNavigation } from '@react-navigation/native';
 
 function Profile() {
   const navigation = useNavigation();
+  const [number, onChangeNumber] = React.useState(null);
+  const [email, onChangeEmail] = React.useState(null);
+  const [city, onChangeCity] = React.useState(null);
   // const myCustomShare = async() => {
   //   // const shareOptions = {
   //   //   url: files.appLogo,
@@ -59,30 +63,61 @@ function Profile() {
               >
                 John Doe
               </Title>
-              <Caption style={styles.caption}>@j_doe</Caption>
+              <Caption style={styles.caption}>@user_name</Caption>
             </View>
           </View>
         </View>
 
         <View style={styles.userInfoSection}>
           <View style={styles.row}>
-            <Icon name="map-marker-radius" color="#777777" size={20} />
-            <Text style={{ color: '#777777', marginLeft: 20 }}>
+            {/* <View></View> */}
+            <Icon name="map-marker-radius" color="#777777" size={30} />
+            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
               Houston, TX
-            </Text>
+            </Text> */}
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeCity}
+            value={city}
+            placeholder="City, State"
+            keyboardType="city"
+          />
           </View>
           <View style={styles.row}>
-            <Icon name="phone" color="#777777" size={20} />
-            <Text style={{ color: '#777777', marginLeft: 20 }}>
+            <Icon name="phone" color="#777777" size={30} />
+            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
               +1-123-456-7890
-            </Text>
+            </Text> */}
+             <TextInput
+            style={styles.input}
+            onChangeText={onChangeNumber}
+            value={number}
+            placeholder="Phone Number"
+            keyboardType="numeric"
+          />
           </View>
+          
           <View style={styles.row}>
-            <Icon name="email" color="#777777" size={20} />
-            <Text style={{ color: '#777777', marginLeft: 20 }}>
+            <Icon name="email" color="#777777" size={30} />
+            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
               john_doe@email.com
-            </Text>
+            </Text> */}
+
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeEmail}
+            value={email}
+            placeholder="Email"
+            keyboardType="email"
+          />
+            
           </View>
+          {/* <View style={styles.row}>
+            <Icon name="key" color="#777777" size={20} />
+            <Text style={{ color: 'black', marginLeft: 20, fontWeight: '900', }}>
+              Host Access
+            </Text>
+          </View> */}
         </View>
 
         <View style={styles.infoBoxWrapper}>
@@ -107,8 +142,8 @@ function Profile() {
             {/* <Title>Edit Post</Title> */}
             <TouchableRipple onPress={() => {}}>
               <View style={styles.menuItem}>
-                <Icon name="account-check-outline" color="#FF6347" size={30} />
-                <Text style={styles.menuItemText}>Edit Profile </Text>
+                <Icon name="account-check-outline" color="#FF6347" size={30} fontWeight='900' />
+                <Text style={styles.menuItemText}>Host Access </Text>
               </View>
             </TouchableRipple>
           </View>
@@ -210,12 +245,14 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'turquoise',
+    backgroundColor: 'turquoise',
   },
   card: {},
   userInfoSection: {
     paddingHorizontal: 30,
     marginBottom: 25,
+    color: 'turquoise',
+   
   },
   title: {
     fontSize: 24,
@@ -229,6 +266,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginBottom: 10,
+    
   },
   infoBoxWrapper: {
     borderBottomColor: '#dddddd',
@@ -237,6 +275,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     flexDirection: 'row',
     height: 100,
+    color: 'turquoise',
   },
   infoBox: {
     width: '50%',
@@ -257,5 +296,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 16,
     lineHeight: 26,
+  },
+  input: {
+    height: 30,
+    margin: 10,
+    borderWidth: 1,
+    marginLeft: 20,
+    
+    
   },
 });
