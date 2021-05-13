@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Switch,
+  Alert,
 } from 'react-native';
 
 function login() {
@@ -19,20 +20,30 @@ function login() {
   // const [selectedValue, setSelectedValue] = useState("yes");
   const [isEnabledH, setIsEnabledH] = useState(false);
   const [isEnabledU, setIsEnabledU] = useState(false);
-  const toggleSwitchH = () => setIsEnabledH((previousState) => !previousState);
-  const toggleSwitchU = () => setIsEnabledU((previousState) => !previousState);
+    // Inverse for Toogle
+    const toggleSwitchH = () => {
+      if (isEnabledH === false){
+          setIsEnabledH(true)
+          setIsEnabledU(false);
+        }
+      else{
+          setIsEnabledH(false)
+      }
+    };
+    const toggleSwitchU = () => {
+      if (isEnabledU === false){
+          setIsEnabledU(true)
+          setIsEnabledH(false);
+        }
+      else{
+          setIsEnabledU(false)
+      }
+    };
 
-//   const toggleSwitchH = () => {
-//     setIsEnabledH((previousState) => !previousState)
-//     setIsEnabledU(!isEnabledH);
-// };
-// const toggleSwitchU = () => {
-//     setIsEnabledU((previousState) => !previousState)
-//     setIsEnabledH(!isEnabledU);
-// };
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  
   return (
     <View style={styles.containerLogin}>
       <Text style={styles.logo}>Stay RnB</Text>
@@ -125,7 +136,10 @@ function login() {
       <TouchableOpacity>
         {/* <Text style={styles.forgot}>Forgot Password?</Text> */}
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity 
+          style={styles.loginBtn}
+            onPress={() => Alert.alert('Success')}
+      >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Signup')}>

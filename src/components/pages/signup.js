@@ -16,125 +16,134 @@ import {
 
 function signUp() {
   const [isSelected, setSelection] = useState(false);
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const [isEnabledH, setIsEnabledH] = useState(false);
+  const [isEnabledU, setIsEnabledU] = useState(false);
+  // Inverse for Toogle
+  const toggleSwitchH = () => {
+    if (isEnabledH === false) {
+      setIsEnabledH(true);
+      setIsEnabledU(false);
+    } else {
+      setIsEnabledH(false);
+    }
+  };
+  const toggleSwitchU = () => {
+    if (isEnabledU === false) {
+      setIsEnabledU(true);
+      setIsEnabledH(false);
+    } else {
+      setIsEnabledU(false);
+    }
+  };
   const [Firstname, setFirstname] = useState('');
   const [Lastname, setLastname] = useState('');
   const [Username, setUsername] = useState('');
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
 
-
   return (
     <View style={styles.containerLogin}>
       <ScrollView>
-      <Text style={styles.logo}>Stay RnB</Text>
+        <View paddingVertical={20} />
 
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="First Name..."
-          placeholderTextColor="#003f5c"
-          // onChangeText={(text) => this.setState({ firstName: text })}
-          onChangeText={() => {setFirstname(Firstname)}}
-        />
-      </View>
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Last Name..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ lastName: text })}
-        />
-      </View>
-
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Username..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ username: text })}
-        />
-      </View>
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Email..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ email: text })}
-        />
-      </View>
-
-      <View style={styles.inputView}>
-        <TextInput
-          secureTextEntry
-          style={styles.inputText}
-          placeholder="Password..."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ password: text })}
-        />
-      </View>
-
-{/* Checkbox */}
-      {/* <View style={styles.checkboxContainer}>
-            <CheckBox
-              value={isSelected}
-              onValueChange={setSelection}
-              style={styles.checkbox}
-            />
-            <Text style={styles.label}>User Sign-Up</Text>
-
-            <CheckBox
-              value={isSelected}
-              onValueChange={setSelection}
-              style={styles.checkbox}
-            />
-            <Text style={styles.label}>Host-Sign-Up</Text>
-        </View> */}
-
-        {/* <View>
-        <Text style={styles.toggleUser}> User 
-      <Switch
-        trackColor={{ false: "#767577", true: "turquoise" }}
-        thumbColor={isEnabled ? "#f5dd4b" : "#465881"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      </Text>
-        </View> */}
-
-        <View>
-        <Text style={styles.toggleHost}> Host
-      <Switch
-        trackColor={{ false: "#767577", true: "turquoise" }}
-        thumbColor={isEnabled ? "#f5dd4b" : "#465881"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      </Text>
+        <Text style={styles.logo}>Stay RnB</Text>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="First Name..."
+            placeholderTextColor="#003f5c"
+            // onChangeText={(text) => this.setState({ firstName: text })}
+            onChangeText={() => {
+              setFirstname(Firstname);
+            }}
+          />
         </View>
 
-    
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Last Name..."
+            placeholderTextColor="#003f5c"
+            onChangeText={() => {
+              setLastname(Lastname);
+            }}
+          />
+        </View>
 
-      <TouchableOpacity></TouchableOpacity>
-      <TouchableOpacity 
-      style={styles.loginBtn}
-      onPress={() => Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')}
-   
-      >
-        <Text style={styles.loginText}>SIGNUP
-       
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Username..."
+            placeholderTextColor="#003f5c"
+            onChangeText={() => {
+              setUsername(Username);
+            }}
+          />
+        </View>
 
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        {/* <Text style={styles.loginText}>LOGIN</Text> */}
-      </TouchableOpacity>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Email..."
+            placeholderTextColor="#003f5c"
+            onChangeText={() => {
+              setEmail(Email);
+            }}
+          />
+        </View>
+
+        <View style={styles.inputView}>
+          <TextInput
+            secureTextEntry
+            style={styles.inputText}
+            placeholder="Password..."
+            placeholderTextColor="#003f5c"
+            onChangeText={() => {
+              setPassword(Password);
+            }}
+          />
+        </View>
+
+        <View>
+          <Text style={styles.toggleUser}>
+            {' '}
+            User
+            <Switch
+              trackColor={{ false: '#767577', true: 'turquoise' }}
+              thumbColor={isEnabledU ? '#f5dd4b' : '#465881'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitchU}
+              value={isEnabledU}
+            />
+          </Text>
+        </View>
+
+        <View>
+          <Text style={styles.toggleHost}>
+            {' '}
+            Host
+            <Switch
+              trackColor={{ false: '#767577', true: 'turquoise' }}
+              thumbColor={isEnabledH ? '#f5dd4b' : '#465881'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitchH}
+              value={isEnabledH}
+            />
+          </Text>
+        </View>
+
+        <TouchableOpacity></TouchableOpacity>
+        <TouchableOpacity
+          style={styles.loginBtn}
+          onPress={() =>
+            Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')
+          }
+        >
+          <Text style={styles.loginText}>SIGNUP</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          {/* <Text style={styles.loginText}>LOGIN</Text> */}
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
@@ -142,21 +151,19 @@ function signUp() {
 
 export default signUp;
 
-
-
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
+    // flex: 1,
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    // backgroundColor: '#003f5c',
   },
   containerLogin: {
     flex: 1,
-    backgroundColor: '#003f5c',
+    // marginTop: 30, //adds gray background
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    backgroundColor: '#003f5c',
   },
   logo: {
     fontWeight: 'bold',
@@ -204,7 +211,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
- 
+
   inputView: {
     width: '80%',
     backgroundColor: '#465881',
@@ -223,26 +230,24 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
   checkboxContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginBottom: 20,
   },
   checkbox: {
-  alignSelf: "center",
+    alignSelf: 'center',
   },
   label: {
     margin: 8,
-    color: "turquoise",
-},
-toggleUser: {
-  color: 'turquoise',
+    color: 'turquoise',
+  },
+  toggleUser: {
+    color: 'turquoise',
     fontWeight: 'bold',
     fontSize: 20,
-    
-},
-toggleHost: {
-  color: 'turquoise',
+  },
+  toggleHost: {
+    color: 'turquoise',
     fontWeight: 'bold',
     fontSize: 20,
-    
-},
+  },
 });
