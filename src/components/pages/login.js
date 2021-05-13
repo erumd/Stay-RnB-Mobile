@@ -17,7 +17,7 @@ import {
 function login() {
   const [isSelected, setSelection] = useState(false);
   const navigation = useNavigation();
-  // const [selectedValue, setSelectedValue] = useState("yes");
+    // States added for input 
   const [isEnabledH, setIsEnabledH] = useState(false);
   const [isEnabledU, setIsEnabledU] = useState(false);
     // Inverse for Toogle
@@ -43,7 +43,7 @@ function login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  
+
   return (
     <View style={styles.containerLogin}>
       <Text style={styles.logo}>Stay RnB</Text>

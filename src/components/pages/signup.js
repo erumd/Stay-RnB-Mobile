@@ -35,6 +35,7 @@ function signUp() {
       setIsEnabledU(false);
     }
   };
+  // States added for input 
   const [Firstname, setFirstname] = useState('');
   const [Lastname, setLastname] = useState('');
   const [Username, setUsername] = useState('');
