@@ -44,6 +44,7 @@ function signUp() {
   return (
     <View style={styles.containerLogin}>
       <ScrollView>
+        {/* Margin for top  */}
         <View paddingVertical={20} />
 
         <Text style={styles.logo}>Stay RnB</Text>
