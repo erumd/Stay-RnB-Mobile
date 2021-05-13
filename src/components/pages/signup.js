@@ -11,14 +11,23 @@ import {
   StyleSheet,
   Switch,
   Alert,
+  ScrollView,
 } from 'react-native';
 
 function signUp() {
   const [isSelected, setSelection] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const [Firstname, setFirstname] = useState('');
+  const [Lastname, setLastname] = useState('');
+  const [Username, setUsername] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
+
+
   return (
     <View style={styles.containerLogin}>
+      <ScrollView>
       <Text style={styles.logo}>Stay RnB</Text>
 
       <View style={styles.inputView}>
@@ -26,7 +35,8 @@ function signUp() {
           style={styles.inputText}
           placeholder="First Name..."
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ username: text })}
+          // onChangeText={(text) => this.setState({ firstName: text })}
+          onChangeText={() => {setFirstname(Firstname)}}
         />
       </View>
 
@@ -35,7 +45,7 @@ function signUp() {
           style={styles.inputText}
           placeholder="Last Name..."
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => this.setState({ username: text })}
+          onChangeText={(text) => this.setState({ lastName: text })}
         />
       </View>
 
@@ -85,7 +95,7 @@ function signUp() {
             <Text style={styles.label}>Host-Sign-Up</Text>
         </View> */}
 
-        <View>
+        {/* <View>
         <Text style={styles.toggleUser}> User 
       <Switch
         trackColor={{ false: "#767577", true: "turquoise" }}
@@ -95,7 +105,7 @@ function signUp() {
         value={isEnabled}
       />
       </Text>
-        </View>
+        </View> */}
 
         <View>
         <Text style={styles.toggleHost}> Host
@@ -125,6 +135,7 @@ function signUp() {
       <TouchableOpacity>
         {/* <Text style={styles.loginText}>LOGIN</Text> */}
       </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 }
@@ -145,6 +156,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#003f5c',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 20,
   },
   logo: {
     fontWeight: 'bold',

@@ -30,6 +30,7 @@
     "react-native-bouncy-checkbox": "^2.1.0",
     "react-native-elements": "git+https://github.com/react-native-elements/react-native-elements.git",
     "react-native-gesture-handler": "^1.8.0",
+    "react-native-image-picker": "^3.6.0",
     "react-native-image-picker-form": "^0.2.5",
     "react-native-paper": "^4.0.1",
     "react-native-picker-select": "^8.0.4",
@@ -42,7 +43,8 @@
     "react-native-web": "^0.15.6",
     "react-navigation": "^4.4.4",
     "tcomb-form-native": "^0.6.20",
-    "toggle-switch-react-native": "^3.2.0"
+    "toggle-switch-react-native": "^3.2.0",
+    "expo-image-picker": "~9.2.0"
   },
   "packagerOpts": {
     "sourceExts": [

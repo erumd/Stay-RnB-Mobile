@@ -3,6 +3,8 @@
 import React from 'react';
 // import NativeForms from 'native-forms-react';
 import { DataForm, Field } from '../../wrappers/DataForms';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
 
 
 // class Example extends React.Component {
