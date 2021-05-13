@@ -16,6 +16,9 @@ import {
 } from 'react-native';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
+
 const answer = [
   {label: 'Yes', value: 'yes',},
   {label: 'No', value: 'no',},
@@ -105,6 +108,9 @@ export default class App extends React.Component {
         <ScrollView
           style={styles.scrollContainer}
           contentContainerStyle={styles.scrollContentContainer}>
+
+
+
           {/* <Text>ZipCode</Text>
           <TextInput
             ref={el => {
