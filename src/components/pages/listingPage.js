@@ -13,6 +13,10 @@ import Post from './listing';
 import { Fontisto } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Input from '../Input';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
+
+
 const defaultPosts = 
   {
     id: 0,

@@ -9,6 +9,8 @@ import {
   Card,
   Paragraph,
   TextInput,
+  Button,
+  Alert,
 } from 'react-native-paper';
 
 import React from 'react';
@@ -133,7 +135,7 @@ function Profile() {
             <Title></Title>
             <TouchableRipple onPress={() => navigation.navigate('AddListing')}>
               <View style={styles.menuItem}>
-                <Icon name="plus-add-more-detail" color="#FF6347" size={30} />
+                <Icon name="plus" color="#FF6347" size={30} />
                 <Text style={styles.menuItemText}>Add Listing </Text>
               </View>
             </TouchableRipple>
@@ -174,6 +176,7 @@ function Profile() {
             />
             <Title name="address">6100 Main St, Houston, TX 77005</Title>
             <Paragraph>Card content</Paragraph>
+            <Button color="red" outline= "10%" type= "submit"> Delete</Button>
           </Card.Content>
         </Card>
 
@@ -186,6 +189,8 @@ function Profile() {
             />
             <Title name="address">6245 Main St, Houston, TX 77010</Title>
             <Paragraph>Card content</Paragraph>
+            <Button color="red" outline= "10%" type= "submit"> Delete</Button>
+            
           </Card.Content>
         </Card>
       </ScrollView>
