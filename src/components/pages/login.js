@@ -17,32 +17,29 @@ import {
 function login() {
   const [isSelected, setSelection] = useState(false);
   const navigation = useNavigation();
-    // States added for input 
+  // States added for input
   const [isEnabledH, setIsEnabledH] = useState(false);
   const [isEnabledU, setIsEnabledU] = useState(false);
-    // Inverse for Toogle
-    const toggleSwitchH = () => {
-      if (isEnabledH === false){
-          setIsEnabledH(true)
-          setIsEnabledU(false);
-        }
-      else{
-          setIsEnabledH(false)
-      }
-    };
-    const toggleSwitchU = () => {
-      if (isEnabledU === false){
-          setIsEnabledU(true)
-          setIsEnabledH(false);
-        }
-      else{
-          setIsEnabledU(false)
-      }
-    };
+  // Inverse for Toogle
+  const toggleSwitchH = () => {
+    if (isEnabledH === false) {
+      setIsEnabledH(true);
+      setIsEnabledU(false);
+    } else {
+      setIsEnabledH(false);
+    }
+  };
+  const toggleSwitchU = () => {
+    if (isEnabledU === false) {
+      setIsEnabledU(true);
+      setIsEnabledH(false);
+    } else {
+      setIsEnabledU(false);
+    }
+  };
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
 
   return (
     <View style={styles.containerLogin}>
@@ -54,7 +51,9 @@ function login() {
           placeholderTextColor="#003f5c"
           // onChangeText={(text) => this.setState({email:text})}
           // onChangeText={() => {setEmail('email@email.com')}}
-          onChangeText={() => {setEmail(email)}}
+          onChangeText={() => {
+            setEmail(email);
+          }}
         />
       </View>
 
@@ -73,7 +72,9 @@ function login() {
           placeholder="Password..."
           placeholderTextColor="#003f5c"
           // onChangeText={(text) => this.setState({ password: text })}
-          onChangeText={() => {setPassword(password)}}
+          onChangeText={() => {
+            setPassword(password);
+          }}
         />
       </View>
 
@@ -95,16 +96,18 @@ function login() {
         </View> */}
 
       <View>
-        <Text style={styles.toggleUser}> User 
-      <Switch
-        trackColor={{ false: "#767577", true: "turquoise" }}
-        thumbColor={isEnabledU ? "#f5dd4b" : "#465881"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitchU}
-        value={isEnabledU}
-      />
-      </Text>
-        </View>
+        <Text style={styles.toggleUser}>
+          {' '}
+          User
+          <Switch
+            trackColor={{ false: '#767577', true: 'turquoise' }}
+            thumbColor={isEnabledU ? '#f5dd4b' : '#465881'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitchU}
+            value={isEnabledU}
+          />
+        </Text>
+      </View>
 
       <View>
         <Text style={styles.toggleHost}>
@@ -136,9 +139,9 @@ function login() {
       <TouchableOpacity>
         {/* <Text style={styles.forgot}>Forgot Password?</Text> */}
       </TouchableOpacity>
-      <TouchableOpacity 
-          style={styles.loginBtn}
-            onPress={() => Alert.alert('Success')}
+      <TouchableOpacity
+        style={styles.loginBtn}
+        onPress={() => Alert.alert('Success')}
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
