@@ -1,16 +1,12 @@
-import { View, SafeAreaView, StyleSheet, ScrollView } from 'react-native';
+import { View, SafeAreaView, StyleSheet, ScrollView,  Alert, Text} from 'react-native';
 import {
-  Avatar,
   Title,
-  Text,
   Caption,
-  Pressable,
   TouchableRipple,
   Card,
   Paragraph,
   TextInput,
   Button,
-  Alert,
 } from 'react-native-paper';
 
 import React from 'react';
@@ -28,6 +24,21 @@ function Profile() {
   const [number, onChangeNumber] = React.useState(null);
   const [email, onChangeEmail] = React.useState(null);
   const [city, onChangeCity] = React.useState(null);
+
+  // const createTwoButtonAlert = () =>
+  // Alert.alert(
+  //   "Alert Title",
+  //   "My Alert Msg",
+  //   [
+  //     {
+  //       text: "Cancel",
+  //       onPress: () => console.log("Cancel Pressed"),
+  //       style: "cancel"
+  //     },
+  //     { text: "OK", onPress: () => console.log("OK Pressed") }
+  //   ]
+  // );
+
   // const myCustomShare = async() => {
   //   // const shareOptions = {
   //   //   url: files.appLogo,
@@ -72,33 +83,26 @@ function Profile() {
 
         <View style={styles.userInfoSection}>
           <View style={styles.row}>
-            {/* <View></View> */}
             <Icon name="map-marker-radius" color="#777777" size={30} />
-            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
-              Houston, TX
-            </Text> */}
             <TextInput
-            style={styles.input}
-            onChangeText={onChangeCity}
-            value={city}
-            placeholder="City, State"
-            keyboardType="city"
-          />
+              style={styles.input}
+              onChangeCity={onChangeCity}
+              value={city}
+              placeholder="City, State"
+              // keyboardType="city"
+            />
           </View>
           <View style={styles.row}>
             <Icon name="phone" color="#777777" size={30} />
-            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
-              +1-123-456-7890
-            </Text> */}
-             <TextInput
-            style={styles.input}
-            onChangeText={onChangeNumber}
-            value={number}
-            placeholder="Phone Number"
-            keyboardType="numeric"
-          />
+            <TextInput
+              style={styles.input}
+              onChangeNumber={onChangeNumber}
+              value={number}
+              placeholder="Phone Number"
+              // keyboardType="numeric"
+            />
           </View>
-          
+
           <View style={styles.row}>
             <Icon name="email" color="#777777" size={30} />
             {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
@@ -106,13 +110,12 @@ function Profile() {
             </Text> */}
 
             <TextInput
-            style={styles.input}
-            onChangeText={onChangeEmail}
-            value={email}
-            placeholder="Email"
-            keyboardType="email"
-          />
-            
+              style={styles.input}
+              onChangeEmail={onChangeEmail}
+              value={email}
+              placeholder="Email"
+              // keyboardType="email"
+            />
           </View>
           {/* <View style={styles.row}>
             <Icon name="key" color="#777777" size={20} />
@@ -144,7 +147,12 @@ function Profile() {
             {/* <Title>Edit Post</Title> */}
             <TouchableRipple onPress={() => {}}>
               <View style={styles.menuItem}>
-                <Icon name="account-check-outline" color="#FF6347" size={30} fontWeight='900' />
+                <Icon
+                  name="account-check-outline"
+                  color="#FF6347"
+                  size={30}
+                  fontWeight="900"
+                />
                 <Text style={styles.menuItemText}>Host Access </Text>
               </View>
             </TouchableRipple>
@@ -176,11 +184,29 @@ function Profile() {
             />
             <Title name="address">6100 Main St, Houston, TX 77005</Title>
             <Paragraph>Card content</Paragraph>
-            <Button color="red" outline= "10%" type= "submit"> Delete</Button>
+            {/* <Button color="red" outline="10%" type="submit">
+              {' '}
+              Delete
+            </Button> */}
           </Card.Content>
+          {/* <View> */}
+            <Button
+              styles={styles.deleteBtn}
+              title="Delete"
+              mode= "contained"
+              color="red"
+              borderRadius="25"
+              // width="80%"
+              icon= "file-excel-box-outline"
+              onPress={() => Alert.alert('Listing Deleted')}
+            >Delete</Button> 
+          {/* </View> */}
         </Card>
-
-        <Card>
+        {/* <View style={styles.container}>
+      <Button title={"2-Button Alert"} onPress={createTwoButtonAlert} />
+      </View> */}
+         <View paddingVertical={10} />
+        {/* <Card>
           <Card.Content>
             <Card.Cover
               source={{
@@ -189,10 +215,12 @@ function Profile() {
             />
             <Title name="address">6245 Main St, Houston, TX 77010</Title>
             <Paragraph>Card content</Paragraph>
-            <Button color="red" outline= "10%" type= "submit"> Delete</Button>
-            
+            <Button color="red" outline="10%" type="submit">
+              {' '}
+              Delete
+            </Button>
           </Card.Content>
-        </Card>
+        </Card> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -257,7 +285,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     marginBottom: 25,
     color: 'turquoise',
-   
   },
   title: {
     fontSize: 24,
@@ -271,7 +298,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginBottom: 10,
-    
   },
   infoBoxWrapper: {
     borderBottomColor: '#dddddd',
@@ -307,7 +333,16 @@ const styles = StyleSheet.create({
     margin: 10,
     borderWidth: 1,
     marginLeft: 20,
-    
-    
+  },
+  deleteBtn: {
+    width: '80%',
+    backgroundColor: 'turquoise',
+    borderRadius: 25,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 40,
+    marginBottom: 10,
+    color:"red",
   },
 });

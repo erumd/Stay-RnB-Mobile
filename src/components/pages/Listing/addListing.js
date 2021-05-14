@@ -31,7 +31,14 @@ const parking= [
     { value: 'Other', label: 'Other' },
   ];
 
-  const number= [
+  const bedroom= [
+    { value: 1, label: '1' },
+    { value: 2, label: '2' },
+    { value: 3, label: '3' },
+    { value: 4, label: '4 or more' },
+  ];
+
+  const restroom= [
     { value: 1, label: '1' },
     { value: 2, label: '2' },
     { value: 3, label: '3' },
@@ -53,13 +60,16 @@ export default class App extends React.Component {
 
     this.inputRefs = {
       firstTextInput: true,
-      favSport0: true,
+      true: true,
       favSport5: true,
     };
 
     this.state = {
       numbers: [
-       
+        { value: 1, label: '1' },
+        { value: 2, label: '2' },
+        { value: 3, label: '3' },
+        { value: 4, label: '4 or more' },
       ],
     };
 
@@ -119,7 +129,7 @@ export default class App extends React.Component {
             returnKeyType="next"
             enablesReturnKeyAutomatically
             onSubmitEditing={() => {
-              this.inputRefs.favSport0.togglePicker();
+              this.inputRefs.true.togglePicker();
             }}
             style={
               Platform.OS === 'ios'
@@ -134,7 +144,7 @@ export default class App extends React.Component {
           {/* and hiding the InputAccessoryView on iOS */}
           <RNPickerSelect
             placeholder={{}}
-            items={number}
+            items={bedroom}
             onValueChange={value => {
               this.setState({
                 favSport2: value,
@@ -150,7 +160,7 @@ export default class App extends React.Component {
           {/* and hiding the InputAccessoryView on iOS */}
           <RNPickerSelect
             placeholder={{}}
-            items={number}
+            items={restroom}
             onValueChange={value => {
               this.setState({
                 favSport2: value,
@@ -186,7 +196,7 @@ export default class App extends React.Component {
             returnKeyType="next"
             enablesReturnKeyAutomatically
             onSubmitEditing={() => {
-              this.inputRefs.favSport0.togglePicker();
+              this.inputRefs.true.togglePicker();
             }}
             style={
               Platform.OS === 'ios'
@@ -205,7 +215,7 @@ export default class App extends React.Component {
             returnKeyType="next"
             enablesReturnKeyAutomatically
             onSubmitEditing={() => {
-              this.inputRefs.favSport0.togglePicker();
+              this.inputRefs.true.togglePicker();
             }}
             style={
               Platform.OS === 'ios'
@@ -224,7 +234,7 @@ export default class App extends React.Component {
             returnKeyType="next"
             enablesReturnKeyAutomatically
             onSubmitEditing={() => {
-              this.inputRefs.favSport0.togglePicker();
+              this.inputRefs.true.togglePicker();
             }}
             style={
               Platform.OS === 'ios'
@@ -359,7 +369,7 @@ export default class App extends React.Component {
             returnKeyType="next"
             enablesReturnKeyAutomatically
             onSubmitEditing={() => {
-              this.inputRefs.favSport0.togglePicker();
+              this.inputRefs.true.togglePicker();
             }}
             style={
               Platform.OS === 'ios'
@@ -374,7 +384,6 @@ export default class App extends React.Component {
         styles={styles.submitBtn}
         title="Submit"
         color= "red"
-        borderRadius= "25"
         width='80%'
         onPress={() => Alert.alert('Listing Submitted')}
       />
@@ -407,7 +416,7 @@ const styles = StyleSheet.create({
   
   submitBtn: {
     width: '80%',
-    backgroundColor: 'turquoise',
+    backgroundColor: 'green',
     borderRadius: 25,
     height: 50,
     alignItems: 'center',
