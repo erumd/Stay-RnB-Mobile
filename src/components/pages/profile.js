@@ -1,16 +1,12 @@
-import { View, SafeAreaView, StyleSheet, ScrollView } from 'react-native';
+import { View, SafeAreaView, StyleSheet, ScrollView,  Alert, Text} from 'react-native';
 import {
-  Avatar,
   Title,
-  Text,
   Caption,
-  Pressable,
   TouchableRipple,
   Card,
   Paragraph,
   TextInput,
   Button,
-  Alert,
 } from 'react-native-paper';
 
 import React from 'react';
@@ -28,6 +24,21 @@ function Profile() {
   const [number, onChangeNumber] = React.useState(null);
   const [email, onChangeEmail] = React.useState(null);
   const [city, onChangeCity] = React.useState(null);
+
+  // const createTwoButtonAlert = () =>
+  // Alert.alert(
+  //   "Alert Title",
+  //   "My Alert Msg",
+  //   [
+  //     {
+  //       text: "Cancel",
+  //       onPress: () => console.log("Cancel Pressed"),
+  //       style: "cancel"
+  //     },
+  //     { text: "OK", onPress: () => console.log("OK Pressed") }
+  //   ]
+  // );
+
   // const myCustomShare = async() => {
   //   // const shareOptions = {
   //   //   url: files.appLogo,
@@ -173,12 +184,25 @@ function Profile() {
             />
             <Title name="address">6100 Main St, Houston, TX 77005</Title>
             <Paragraph>Card content</Paragraph>
-            <Button color="red" outline="10%" type="submit">
+            {/* <Button color="red" outline="10%" type="submit">
               {' '}
               Delete
-            </Button>
+            </Button> */}
           </Card.Content>
+          <View>
+            <Button
+              styles={styles.submitBtn}
+              title="Delete"
+              color="red"
+              borderRadius="25"
+              width="80%"
+              onPress={() => Alert.alert('Listing Deleted')}
+            />
+          </View>
         </Card>
+        {/* <View style={styles.container}>
+      <Button title={"2-Button Alert"} onPress={createTwoButtonAlert} />
+      </View> */}
 
         <Card>
           <Card.Content>
@@ -307,5 +331,15 @@ const styles = StyleSheet.create({
     margin: 10,
     borderWidth: 1,
     marginLeft: 20,
+  },
+  submitBtn: {
+    width: '80%',
+    backgroundColor: 'turquoise',
+    borderRadius: 25,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 40,
+    marginBottom: 10,
   },
 });
