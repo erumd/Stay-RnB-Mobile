@@ -72,33 +72,26 @@ function Profile() {
 
         <View style={styles.userInfoSection}>
           <View style={styles.row}>
-            {/* <View></View> */}
             <Icon name="map-marker-radius" color="#777777" size={30} />
-            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
-              Houston, TX
-            </Text> */}
             <TextInput
-            style={styles.input}
-            onChangeText={onChangeCity}
-            value={city}
-            placeholder="City, State"
-            keyboardType="city"
-          />
+              style={styles.input}
+              onChangeCity={onChangeCity}
+              value={city}
+              placeholder="City, State"
+              // keyboardType="city"
+            />
           </View>
           <View style={styles.row}>
             <Icon name="phone" color="#777777" size={30} />
-            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
-              +1-123-456-7890
-            </Text> */}
-             <TextInput
-            style={styles.input}
-            onChangeText={onChangeNumber}
-            value={number}
-            placeholder="Phone Number"
-            keyboardType="numeric"
-          />
+            <TextInput
+              style={styles.input}
+              onChangeNumber={onChangeNumber}
+              value={number}
+              placeholder="Phone Number"
+              // keyboardType="numeric"
+            />
           </View>
-          
+
           <View style={styles.row}>
             <Icon name="email" color="#777777" size={30} />
             {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
@@ -106,13 +99,12 @@ function Profile() {
             </Text> */}
 
             <TextInput
-            style={styles.input}
-            onChangeText={onChangeEmail}
-            value={email}
-            placeholder="Email"
-            keyboardType="email"
-          />
-            
+              style={styles.input}
+              onChangeEmail={onChangeEmail}
+              value={email}
+              placeholder="Email"
+              // keyboardType="email"
+            />
           </View>
           {/* <View style={styles.row}>
             <Icon name="key" color="#777777" size={20} />
@@ -144,7 +136,12 @@ function Profile() {
             {/* <Title>Edit Post</Title> */}
             <TouchableRipple onPress={() => {}}>
               <View style={styles.menuItem}>
-                <Icon name="account-check-outline" color="#FF6347" size={30} fontWeight='900' />
+                <Icon
+                  name="account-check-outline"
+                  color="#FF6347"
+                  size={30}
+                  fontWeight="900"
+                />
                 <Text style={styles.menuItemText}>Host Access </Text>
               </View>
             </TouchableRipple>
@@ -176,7 +173,10 @@ function Profile() {
             />
             <Title name="address">6100 Main St, Houston, TX 77005</Title>
             <Paragraph>Card content</Paragraph>
-            <Button color="red" outline= "10%" type= "submit"> Delete</Button>
+            <Button color="red" outline="10%" type="submit">
+              {' '}
+              Delete
+            </Button>
           </Card.Content>
         </Card>
 
@@ -189,8 +189,10 @@ function Profile() {
             />
             <Title name="address">6245 Main St, Houston, TX 77010</Title>
             <Paragraph>Card content</Paragraph>
-            <Button color="red" outline= "10%" type= "submit"> Delete</Button>
-            
+            <Button color="red" outline="10%" type="submit">
+              {' '}
+              Delete
+            </Button>
           </Card.Content>
         </Card>
       </ScrollView>
@@ -257,7 +259,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     marginBottom: 25,
     color: 'turquoise',
-   
   },
   title: {
     fontSize: 24,
@@ -271,7 +272,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginBottom: 10,
-    
   },
   infoBoxWrapper: {
     borderBottomColor: '#dddddd',
@@ -307,7 +307,5 @@ const styles = StyleSheet.create({
     margin: 10,
     borderWidth: 1,
     marginLeft: 20,
-    
-    
   },
 });
