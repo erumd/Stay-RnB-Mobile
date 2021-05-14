@@ -189,22 +189,24 @@ function Profile() {
               Delete
             </Button> */}
           </Card.Content>
-          <View>
+          {/* <View> */}
             <Button
-              styles={styles.submitBtn}
+              styles={styles.deleteBtn}
               title="Delete"
+              mode= "contained"
               color="red"
               borderRadius="25"
-              width="80%"
+              // width="80%"
+              icon= "file-excel-box-outline"
               onPress={() => Alert.alert('Listing Deleted')}
-            />
-          </View>
+            >Delete</Button> 
+          {/* </View> */}
         </Card>
         {/* <View style={styles.container}>
       <Button title={"2-Button Alert"} onPress={createTwoButtonAlert} />
       </View> */}
-
-        <Card>
+         <View paddingVertical={10} />
+        {/* <Card>
           <Card.Content>
             <Card.Cover
               source={{
@@ -218,7 +220,7 @@ function Profile() {
               Delete
             </Button>
           </Card.Content>
-        </Card>
+        </Card> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -332,7 +334,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginLeft: 20,
   },
-  submitBtn: {
+  deleteBtn: {
     width: '80%',
     backgroundColor: 'turquoise',
     borderRadius: 25,
@@ -341,5 +343,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 40,
     marginBottom: 10,
+    color:"red",
   },
 });
