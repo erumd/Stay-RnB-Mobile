@@ -14,7 +14,7 @@ import {
   Alert,
 } from 'react-native';
 
-function login() {
+function Login() {
   const [isSelected, setSelection] = useState(false);
   const navigation = useNavigation();
   // States added for input
@@ -152,7 +152,7 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
 
 const styles = StyleSheet.create({
   container: {

@@ -7,9 +7,6 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import { MaterialCommunityIcons } from '@expo/vector-icons';
-// import { ImageBackground } from 'native-base';
 
 const image = {
   uri: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',

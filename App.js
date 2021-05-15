@@ -3,17 +3,9 @@ import * as React from 'react';
 import NavTabs from './components/NavTabs';
 import Profile from './components/pages/Profile';
 
-import {
-  Text,
-  View,
-  ImageBackground,
-  StyleSheet,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-// import Listing from './components/pages/listingPage';
 import Login from './components/pages/Login';
 import Signup from './components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -47,85 +39,13 @@ const App = () => {
   {
     return (
       <NavigationContainer>
-        <NavTabs />
+        {/* <View> */}
+          <NavTabs />
+        {/* </View> */}
       </NavigationContainer>
     );
   }
 };
-
-// function Home() {
-//   return (
-//     <View style={styles.container}>
-//       <ImageBackground source={image} style={styles.image}>
-//         <Text style={styles.homeTitle}>Stay RnB</Text>
-//         <TouchableOpacity style={styles.userBtn}>
-//           <Text style={styles.userText}>USER</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.ownerBtn}>
-//           <Text style={styles.ownerText}>Host</Text>
-//         </TouchableOpacity>
-//       </ImageBackground>
-//     </View>
-//   );
-// }
-
-// const Tab = createBottomTabNavigator();
-
-// function MyTabs() {
-//   return (
-//     <Tab.Navigator
-//       initialRouteName="Feed"
-//       tabBarOptions={{
-//         activeTintColor: '#e91e63',
-//         inactiveColor: "#95a5a6",
-//         style: {
-//           backgroundColor: 'white',
-//       },
-//       }}
-//     >
-//       <Tab.Screen
-//         name="Home"
-//         component={Home}
-//         options={{
-//           tabBarLabel: 'Home',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="home" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Listing"
-//         component={Listing}
-//         options={{
-//           tabBarLabel: 'Listing',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="bell" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Profile"
-//         component={ProfileStackScreen}
-//         options={{
-//           tabBarLabel: 'Profile',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="account" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Login"
-//         component={AuthStackScreen}
-//         options={{
-//           tabBarLabel: 'Login',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="login" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//     </Tab.Navigator>
-//   );
-// }
 
 const styles = StyleSheet.create({
   container: {
