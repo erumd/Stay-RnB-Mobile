@@ -6,8 +6,8 @@
 // import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import Input from './src/components/Input';
-import Profile from './src/components/pages/profile';
+import Input from './components/Input';
+import Profile from './components/pages/profile';
 // import { Button } from 'react-bootstrap';
 // import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 
@@ -22,11 +22,11 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Listing from './src/components/pages/listingPage';
-import Login from './src/components/pages/login';
-import Signup from './src/components/pages/signup';
+import Listing from './components/pages/listingPage';
+import Login from './components/pages/login';
+import Signup from './components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
-import AddListing from './src/components/pages/Listing/addListing';
+import AddListing from './components/pages/Listing/addListing';
 
 const image = {
   uri:
