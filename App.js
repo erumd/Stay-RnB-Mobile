@@ -1,15 +1,7 @@
-// import Container from "./src/components/Container";
-
-// const App = () => <Container />;
-
-// export default App;
-// import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import Input from './components/Input';
-import Profile from './components/pages/profile';
-// import { Button } from 'react-bootstrap';
-// import BootstrapStyleSheet from 'react-native-bootstrap-styles';
+import NavTabs from './components/NavTabs';
+import Profile from './components/pages/Profile';
 
 import {
   Text,
@@ -20,24 +12,16 @@ import {
   TextInput,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Listing from './components/pages/listingPage';
-import Login from './components/pages/login';
+
+// import Listing from './components/pages/listingPage';
+import Login from './components/pages/Login';
 import Signup from './components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
-import AddListing from './components/pages/Listing/addListing';
+import AddListing from './Listing/addListing';
 
 const image = {
-  uri:
-    'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
+  uri: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
 };
-
-const items = [
-  //name key is must.It is to show the text in front
-  { id: 1, name: 'User' },
-  { id: 2, name: 'Owner' },
-];
 
 const AuthStack = createStackNavigator();
 function AuthStackScreen() {
@@ -63,131 +47,85 @@ const App = () => {
   {
     return (
       <NavigationContainer>
-        <MyTabs />
+        <NavTabs />
       </NavigationContainer>
     );
   }
 };
 
-function Home() {
-  return (
-    <View style={styles.container}>
-      <ImageBackground source={image} style={styles.image}>
-        <Text style={styles.homeTitle}>Stay RnB</Text>
-        <TouchableOpacity style={styles.userBtn}>
-          <Text style={styles.userText}>USER</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.ownerBtn}>
-          <Text style={styles.ownerText}>Host</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </View>
-  );
-}
-
-// function Profile() {
+// function Home() {
 //   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Profile!</Text>
+//     <View style={styles.container}>
+//       <ImageBackground source={image} style={styles.image}>
+//         <Text style={styles.homeTitle}>Stay RnB</Text>
+//         <TouchableOpacity style={styles.userBtn}>
+//           <Text style={styles.userText}>USER</Text>
+//         </TouchableOpacity>
+//         <TouchableOpacity style={styles.ownerBtn}>
+//           <Text style={styles.ownerText}>Host</Text>
+//         </TouchableOpacity>
+//       </ImageBackground>
 //     </View>
 //   );
 // }
 
-// function Login() {
+// const Tab = createBottomTabNavigator();
+
+// function MyTabs() {
 //   return (
-//     <View style={styles.containerLogin}>
-//       <Text style={styles.logo}>Stay RnB</Text>
-//       <Input placeholder="Email..." />
-
-//       {/* <View style={styles.usernameView}>
-//         <TextInput
-//           style={styles.inputText}
-//           placeholder="Username..."
-//           placeholderTextColor="#003f5c"
-//           onChangeText={(text) => this.setState({ username: text })}
-//         />
-//       </View> */}
-
-//       <View style={styles.inputView}>
-//         <TextInput
-//           secureTextEntry
-//           style={styles.inputText}
-//           placeholder="Password..."
-//           placeholderTextColor="#003f5c"
-//           onChangeText={(text) => ({ password: text })}
-//         />
-//       </View>
-
-//       {/* <TouchableOpacity>
-//         <Text style={styles.forgot}>Forgot Password?</Text>
-//       </TouchableOpacity> */}
-//       <TouchableOpacity style={styles.loginBtn}>
-//         <Text style={styles.loginText}>LOGIN</Text>
-//       </TouchableOpacity>
-//       <TouchableOpacity>
-//         <Text style={styles.loginText}>Signup</Text>
-//       </TouchableOpacity>
-//     </View>
+//     <Tab.Navigator
+//       initialRouteName="Feed"
+//       tabBarOptions={{
+//         activeTintColor: '#e91e63',
+//         inactiveColor: "#95a5a6",
+//         style: {
+//           backgroundColor: 'white',
+//       },
+//       }}
+//     >
+//       <Tab.Screen
+//         name="Home"
+//         component={Home}
+//         options={{
+//           tabBarLabel: 'Home',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="home" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Listing"
+//         component={Listing}
+//         options={{
+//           tabBarLabel: 'Listing',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="bell" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Profile"
+//         component={ProfileStackScreen}
+//         options={{
+//           tabBarLabel: 'Profile',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="account" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Login"
+//         component={AuthStackScreen}
+//         options={{
+//           tabBarLabel: 'Login',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="login" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//     </Tab.Navigator>
 //   );
 // }
-
-const Tab = createBottomTabNavigator();
-
-function MyTabs() {
-  return (
-    <Tab.Navigator
-      initialRouteName="Feed"
-      tabBarOptions={{
-        activeTintColor: '#e91e63',
-        inactiveColor: "#95a5a6",
-        style: {
-          backgroundColor: 'white',
-      },
-      }}
-    >
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Listing"
-        component={Listing}
-        options={{
-          tabBarLabel: 'Listing',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileStackScreen}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Login"
-        component={AuthStackScreen}
-        options={{
-          tabBarLabel: 'Login',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="login" color={color} size={size} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {

@@ -7,32 +7,29 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
-// import styles from './styles.js';
+
 import { useNavigation } from '@react-navigation/native';
 // const days = 7;
-const defaultPosts = 
-  {
-    id: 0,
-    image:
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
-    bed: 2,
-    bathroom: 2,
-    type: 'Apartment',
-    zipcode: 77098,
-    shared: ' Yes',
-    Price: 1500,
-    dateAvailable: 'June 2021',
-    Pet: 'Yes',
-    Parking: 'Street',
-    washer: 'Yes',
-    Wifi: 'No',
-    stove: 'No',
-    owner: 'Link to Profile',
-  };  
+const defaultPosts = {
+  id: 0,
+  image:
+    'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
+  bed: 2,
+  bathroom: 2,
+  type: 'Apartment',
+  zipcode: 77098,
+  shared: ' Yes',
+  Price: 1500,
+  dateAvailable: 'June 2021',
+  Pet: 'Yes',
+  Parking: 'Street',
+  washer: 'Yes',
+  Wifi: 'No',
+  stove: 'No',
+  owner: 'Link to Profile',
+};
 
-
-
-const Post = (props) => {
+const Listing = (props) => {
   const post = props.post;
   const navigation = useNavigation();
   const goToPostPage = () => {
@@ -40,21 +37,25 @@ const Post = (props) => {
   };
 
   return (
-    <View style={styles.containerListing}> 
+    <View style={styles.containerListing}>
       <Pressable onPress={goToPostPage} style={styles.container}>
-        <Image style={styles.image} source={{ uri:
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80', }} />
+        <Image
+          style={styles.image}
+          source={{
+            uri: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
+          }}
+        />
         <Text style={styles.bedrooms}>
           {post.bed} bed {post.bathroom} bathroom
         </Text>
-        <Text style={styles.description} numberOfLines={2}> 
+        <Text style={styles.description} numberOfLines={2}>
           {post.type}
         </Text>
         <Text style={styles.zipcode}> Zipcode:{post.zipcode} </Text>
         <Text style={styles.price}> ${post.Price}/month </Text>
-        
-        <Text style={styles.dateAvailable}> 
-           Available: {post.dateAvailable}{' '}
+
+        <Text style={styles.dateAvailable}>
+          Available: {post.dateAvailable}{' '}
         </Text>
         <Text> Shared:{post.shared}</Text>
         <Text style={styles.pet}> Pet: {post.Pet} </Text>
@@ -68,13 +69,10 @@ const Post = (props) => {
         {/* </Text> */}
       </Pressable>
     </View>
-
   );
 };
 
-// Post.defaultProps = { post: defaultPosts };
-
-export default Post;
+export default Listing;
 
 const styles = StyleSheet.create({
   container: {

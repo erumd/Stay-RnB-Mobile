@@ -1,7 +1,12 @@
-import React from "react";
-import {View} from 'react-native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Home from './pages/Home';
+import Listing from './pages/Listing';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
 
- const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 function NavTabs() {
   return (

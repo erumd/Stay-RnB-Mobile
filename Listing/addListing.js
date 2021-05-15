@@ -16,43 +16,41 @@ import {
 } from 'react-native';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 const answer = [
-  {label: 'Yes', value: 'yes',},
-  {label: 'No', value: 'no',},
+  { label: 'Yes', value: 'yes' },
+  { label: 'No', value: 'no' },
 ];
 
-const parking= [
-    { value: 'Attached Garage', label: 'Attached Garage' },
-    { value: 'Lot', label: 'Lot' },
-    { value: 'Street', label: 'Street' },
-    { value: 'Other', label: 'Other' },
-  ];
+const parking = [
+  { value: 'Attached Garage', label: 'Attached Garage' },
+  { value: 'Lot', label: 'Lot' },
+  { value: 'Street', label: 'Street' },
+  { value: 'Other', label: 'Other' },
+];
 
-  const bedroom= [
-    { value: 1, label: '1' },
-    { value: 2, label: '2' },
-    { value: 3, label: '3' },
-    { value: 4, label: '4 or more' },
-  ];
+const bedroom = [
+  { value: 1, label: '1' },
+  { value: 2, label: '2' },
+  { value: 3, label: '3' },
+  { value: 4, label: '4 or more' },
+];
 
-  const restroom= [
-    { value: 1, label: '1' },
-    { value: 2, label: '2' },
-    { value: 3, label: '3' },
-    { value: 4, label: '4 or more' },
-  ];
+const restroom = [
+  { value: 1, label: '1' },
+  { value: 2, label: '2' },
+  { value: 3, label: '3' },
+  { value: 4, label: '4 or more' },
+];
 
-  const property= [
-    { value: 'House', label: 'House' },
-    { value: 'Apartment', label: 'Apartment' },
-    { value: 'Condo', label: 'Condo' },
-    { value: 'Studio', label: 'Studio' },
-    { value: 'Other', label: 'Other' },
-  ];
-
+const property = [
+  { value: 'House', label: 'House' },
+  { value: 'Apartment', label: 'Apartment' },
+  { value: 'Condo', label: 'Condo' },
+  { value: 'Studio', label: 'Studio' },
+  { value: 'Other', label: 'Other' },
+];
 
 export default class App extends React.Component {
   constructor(props) {
@@ -90,18 +88,19 @@ export default class App extends React.Component {
               }
             );
           }}
-          hitSlop={{ top: 4, right: 4, bottom: 4, left: 4 }}>
+          hitSlop={{ top: 4, right: 4, bottom: 4, left: 4 }}
+        >
           <View testID="needed_for_touchable">
             <Text
               style={[
                 defaultStyles.done,
                 { fontWeight: 'normal', color: 'red' },
-              ]}>
+              ]}
+            >
               Cancel
             </Text>
           </View>
         </TouchableWithoutFeedback>
-       
       </View>
     );
   }
@@ -117,10 +116,8 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <ScrollView
           style={styles.scrollContainer}
-          contentContainerStyle={styles.scrollContentContainer}>
-
-
-
+          contentContainerStyle={styles.scrollContentContainer}
+        >
           {/* <Text>ZipCode</Text>
           <TextInput
             ref={el => {
@@ -145,7 +142,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={bedroom}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -161,7 +158,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={restroom}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -177,7 +174,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={property}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -190,7 +187,7 @@ export default class App extends React.Component {
           <View paddingVertical={5} />
           <Text>ZipCode</Text>
           <TextInput
-            ref={el => {
+            ref={(el) => {
               this.inputRefs.firstTextInput = el;
             }}
             returnKeyType="next"
@@ -209,7 +206,7 @@ export default class App extends React.Component {
           <View paddingVertical={5} />
           <Text>Rent Per Month:</Text>
           <TextInput
-            ref={el => {
+            ref={(el) => {
               this.inputRefs.firstTextInput = el;
             }}
             returnKeyType="next"
@@ -228,7 +225,7 @@ export default class App extends React.Component {
           <View paddingVertical={5} />
           <Text>Availability Start Date:</Text>
           <TextInput
-            ref={el => {
+            ref={(el) => {
               this.inputRefs.firstTextInput = el;
             }}
             returnKeyType="next"
@@ -244,7 +241,6 @@ export default class App extends React.Component {
             blurOnSubmit={false}
           />
 
-
           <View paddingVertical={5} />
 
           <Text>Shared Space?</Text>
@@ -252,7 +248,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={answer}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -261,8 +257,6 @@ export default class App extends React.Component {
             style={pickerSelectStyles}
             value={this.state.favSport2}
           />
-
-          
 
           <View paddingVertical={5} />
           <Text>Pets Allowed?</Text>
@@ -270,7 +264,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={answer}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -279,14 +273,14 @@ export default class App extends React.Component {
             style={pickerSelectStyles}
             value={this.state.favSport2}
           />
-       
-       <View paddingVertical={5} />
+
+          <View paddingVertical={5} />
           <Text>Parking</Text>
           {/* and hiding the InputAccessoryView on iOS */}
           <RNPickerSelect
             placeholder={{}}
             items={parking}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -302,7 +296,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={answer}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -318,7 +312,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={answer}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -334,7 +328,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={answer}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -350,7 +344,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{}}
             items={answer}
-            onValueChange={value => {
+            onValueChange={(value) => {
               this.setState({
                 favSport2: value,
               });
@@ -363,7 +357,7 @@ export default class App extends React.Component {
           <View paddingVertical={5} />
           <Text>Host Contact</Text>
           <TextInput
-            ref={el => {
+            ref={(el) => {
               this.inputRefs.firstTextInput = el;
             }}
             returnKeyType="next"
@@ -379,17 +373,15 @@ export default class App extends React.Component {
             blurOnSubmit={false}
           />
 
-      <View>
-      <Button
-        styles={styles.submitBtn}
-        title="Submit"
-        color= "red"
-        width='80%'
-        onPress={() => Alert.alert('Listing Submitted')}
-      />
-      </View>
-
-          
+          <View>
+            <Button
+              styles={styles.submitBtn}
+              title="Submit"
+              color="red"
+              width="80%"
+              onPress={() => Alert.alert('Listing Submitted')}
+            />
+          </View>
         </ScrollView>
       </View>
     );
@@ -400,20 +392,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'turquoise',
-   
   },
   scrollContainer: {
     flex: 1,
     paddingHorizontal: 15,
-    
-    
   },
   scrollContentContainer: {
     paddingTop: 40,
     paddingBottom: 10,
     backgroundColor: 'turquoise',
   },
-  
+
   submitBtn: {
     width: '80%',
     backgroundColor: 'green',
