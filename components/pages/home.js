@@ -1,51 +1,42 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import NavTabs from './components/NavTabs';
-import Profile from './components/pages/Profile';
-
-import { View, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-
-import Login from './components/pages/Login';
-import Signup from './components/pages/signup';
-import { createStackNavigator } from '@react-navigation/stack';
-import AddListing from './Listing/addListing';
+import React from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 
 const image = {
   uri: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
 };
 
-const AuthStack = createStackNavigator();
-function AuthStackScreen() {
+const items = [
+  //name key is must.It is to show the text in front
+  { id: 1, name: 'User' },
+  { id: 2, name: 'Owner' },
+];
+
+function Home(props) {
+  // const home = props.post;
   return (
-    <AuthStack.Navigator>
-      <AuthStack.Screen name="Login" component={Login} />
-      <AuthStack.Screen name="Signup" component={Signup} />
-    </AuthStack.Navigator>
+    <View style={styles.container}>
+      <ImageBackground source={image} style={styles.image}>
+        <Text style={styles.homeTitle}>Stay RnB</Text>
+        <TouchableOpacity style={styles.userBtn}>
+          <Text style={styles.userText}>USER</Text>
+          <Button>Button</Button>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ownerBtn}>
+          <Text style={styles.ownerText}>OWNER</Text>
+        </TouchableOpacity>
+      </ImageBackground>
+    </View>
   );
 }
 
-const ProfileStack = createStackNavigator();
-function ProfileStackScreen() {
-  return (
-    <ProfileStack.Navigator>
-      <ProfileStack.Screen name="Profile" component={Profile} />
-      <ProfileStack.Screen name="AddListing" component={AddListing} />
-    </ProfileStack.Navigator>
-  );
-}
-
-const App = () => {
-  {
-    return (
-      <NavigationContainer>
-        {/* <View> */}
-          <NavTabs />
-        {/* </View> */}
-      </NavigationContainer>
-    );
-  }
-};
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
@@ -70,14 +61,13 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-    alignItems: 'center',
   },
   homeTitle: {
     color: 'turquoise',
     fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: '#003f5c',
+    backgroundColor: '#000000a0',
     fontFamily: 'Cochin',
   },
   title: {
@@ -93,9 +83,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     marginBottom: 10,
   },
-  loginText: {
-    color: 'white',
-  },
+
   userBtn: {
     width: '80%',
     backgroundColor: 'turquoise',
@@ -115,8 +103,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#003f5c',
     borderRadius: 25,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'right',
+    justifyContent: 'right',
     marginTop: 40,
     marginBottom: 10,
   },
@@ -133,14 +121,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
-  inputText: {
-    height: 50,
-    color: 'white',
-  },
-  forgot: {
-    color: 'white',
-    fontSize: 11,
-  },
 });
-
-export default App;
