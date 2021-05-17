@@ -1,16 +1,6 @@
-// import Container from "./src/components/Container";
-
-// const App = () => <Container />;
-
-// export default App;
-// import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
-import 'react-native-gesture-handler';
 import * as React from 'react';
-import Input from './src/components/Input';
-import Profile from './src/components/pages/profile';
-// import { Button } from 'react-bootstrap';
-// import BootstrapStyleSheet from 'react-native-bootstrap-styles';
-
+import { Button } from 'react-bootstrap';
+// import { listing } from 'reactnative-ui-bootstrap';
 import {
   Text,
   View,
@@ -22,13 +12,6 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Listing from './src/components/pages/listingPage';
-import Login from './src/components/pages/login';
-import Signup from './src/components/pages/signup';
-import { createStackNavigator } from '@react-navigation/stack';
-import AddListing from './src/components/pages/Listing/addListing';
-import ListingTab from './src/components/pages/listingPage';
-
 const image = {
   uri:
     'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
@@ -40,110 +23,82 @@ const items = [
   { id: 2, name: 'Owner' },
 ];
 
-const AuthStack = createStackNavigator();
-function AuthStackScreen() {
-  return (
-    <AuthStack.Navigator>
-      <AuthStack.Screen name="Login" component={Login} />
-      <AuthStack.Screen name="Signup" component={Signup} />
-    </AuthStack.Navigator>
-  );
-}
-
-const ProfileStack = createStackNavigator();
-function ProfileStackScreen() {
-  return (
-    <ProfileStack.Navigator>
-      <ProfileStack.Screen name="Profile" component={Profile} />
-      <ProfileStack.Screen name="AddListing" component={AddListing} />
-    </ProfileStack.Navigator>
-  );
-}
-
-const HomeStack = createStackNavigator();
-function HomeStackScreen() {
-  return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Profile" component={Profile} />
-      <HomeStack.Screen name="ListingTab" component={ListingTab} />
-    </HomeStack.Navigator>
-  );
-}
-
-const App = () => {
-  {
-    return (
-      <NavigationContainer>
-        <MyTabs />
-      </NavigationContainer>
-    );
-  }
-};
-
 function Home() {
-  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Text style={styles.homeTitle}>Stay RnB</Text>
-        <TouchableOpacity style={styles.userBtn}
-            onPress={() => navigation.navigate('ListingTab')}
-        >
+        <TouchableOpacity style={styles.userBtn}>
           <Text style={styles.userText}>USER</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.ownerBtn}>
-          <Text style={styles.ownerText}>Host</Text>
+          <Text style={styles.ownerText}>OWNER</Text>
         </TouchableOpacity>
       </ImageBackground>
     </View>
   );
 }
 
-// function Profile() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Profile!</Text>
-//     </View>
-//   );
-// }
+function Rent() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Rent!</Text>
+    </View>
+  );
+}
 
-// function Login() {
-//   return (
-//     <View style={styles.containerLogin}>
-//       <Text style={styles.logo}>Stay RnB</Text>
-//       <Input placeholder="Email..." />
+function Profile() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Profile!</Text>
+    </View>
+  );
+}
 
-//       {/* <View style={styles.usernameView}>
-//         <TextInput
-//           style={styles.inputText}
-//           placeholder="Username..."
-//           placeholderTextColor="#003f5c"
-//           onChangeText={(text) => this.setState({ username: text })}
-//         />
-//       </View> */}
+function Login() {
+  return (
+    <View style={styles.containerLogin}>
+      <Text style={styles.logo}>Stay RnB</Text>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.inputText}
+          placeholder="Email..."
+          placeholderTextColor="#003f5c"
+          onChangeText={(text) => ({ email: text })}
+        />
+      </View>
 
-//       <View style={styles.inputView}>
-//         <TextInput
-//           secureTextEntry
-//           style={styles.inputText}
-//           placeholder="Password..."
-//           placeholderTextColor="#003f5c"
-//           onChangeText={(text) => ({ password: text })}
-//         />
-//       </View>
+      {/* <View style={styles.usernameView}>
+        <TextInput
+          style={styles.inputText}
+          placeholder="Username..."
+          placeholderTextColor="#003f5c"
+          onChangeText={(text) => this.setState({ username: text })}
+        />
+      </View> */}
 
-//       {/* <TouchableOpacity>
-//         <Text style={styles.forgot}>Forgot Password?</Text>
-//       </TouchableOpacity> */}
-//       <TouchableOpacity style={styles.loginBtn}>
-//         <Text style={styles.loginText}>LOGIN</Text>
-//       </TouchableOpacity>
-//       <TouchableOpacity>
-//         <Text style={styles.loginText}>Signup</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// }
+      <View style={styles.inputView}>
+        <TextInput
+          secureTextEntry
+          style={styles.inputText}
+          placeholder="Password..."
+          placeholderTextColor="#003f5c"
+          onChangeText={(text) => ({ password: text })}
+        />
+      </View>
+
+      <TouchableOpacity>
+        <Text style={styles.forgot}>Forgot Password?</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.loginBtn}>
+        <Text style={styles.loginText}>LOGIN</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Text style={styles.loginText}>Signup</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -153,10 +108,6 @@ function MyTabs() {
       initialRouteName="Feed"
       tabBarOptions={{
         activeTintColor: '#e91e63',
-        inactiveColor: "#95a5a6",
-        style: {
-          backgroundColor: 'white',
-      },
       }}
     >
       <Tab.Screen
@@ -170,10 +121,10 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Listing"
-        component={Listing}
+        name="Rent"
+        component={Rent}
         options={{
-          tabBarLabel: 'Listing',
+          tabBarLabel: 'Rent',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
@@ -181,7 +132,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileStackScreen}
+        component={Profile}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
@@ -191,7 +142,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Login"
-        component={AuthStackScreen}
+        component={Login}
         options={{
           tabBarLabel: 'Login',
           tabBarIcon: ({ color, size }) => (
@@ -226,14 +177,13 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-    alignItems: 'center',
   },
   homeTitle: {
     color: 'turquoise',
     fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: '#003f5c',
+    backgroundColor: '#000000a0',
     fontFamily: 'Cochin',
   },
   title: {
@@ -299,4 +249,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+}
