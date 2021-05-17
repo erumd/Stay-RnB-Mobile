@@ -45,7 +45,8 @@
     "react-native-web": "^0.15.6",
     "react-navigation": "^4.4.4",
     "tcomb-form-native": "^0.6.20",
-    "toggle-switch-react-native": "^3.2.0"
+    "toggle-switch-react-native": "^3.2.0",
+    "firebase": "7.9.0"
   },
   "packagerOpts": {
     "sourceExts": [

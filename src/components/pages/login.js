@@ -12,6 +12,7 @@ import {
   StyleSheet,
   Switch,
   Alert,
+  Button,
 } from 'react-native';
 
 function login() {
@@ -42,6 +43,17 @@ function login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const firebaseSignIn = async () => {
+    try {
+        const response = await firebase.auth().signInWithEmailAndPassword(email, password);
+        navigation.navigate('Profile');
+    } catch (err) {
+        setError(err.message);
+    }
+
+}
 
 
   return (
@@ -58,14 +70,6 @@ function login() {
         />
       </View>
 
-      {/* <View style={styles.usernameView} >
-            <TextInput  
-              style={styles.inputText}
-              placeholder="Username..." 
-              placeholderTextColor="#003f5c"
-              onChangeText={text => this.setState({username:text})}/>
-          </View> */}
-
       <View style={styles.inputView}>
         <TextInput
           secureTextEntry
@@ -77,24 +81,7 @@ function login() {
         />
       </View>
 
-      {/* checkbox */}
-      {/* <View style={styles.checkboxContainer}>
-            <CheckBox
-              value={isSelected}
-              onValueChange={setSelection}
-              style={styles.checkbox}
-            />
-            <Text style={styles.label}>User</Text>
-
-            <CheckBox
-              value={isSelected}
-              onValueChange={setSelection}
-              style={styles.checkbox}
-            />
-            <Text style={styles.label}>Host</Text>
-        </View> */}
-
-      <View>
+      {/* <View>
         <Text style={styles.toggleUser}> User 
       <Switch
         trackColor={{ false: "#767577", true: "turquoise" }}
@@ -104,9 +91,9 @@ function login() {
         value={isEnabledU}
       />
       </Text>
-        </View>
+        </View> */}
 
-      <View>
+      {/* <View>
         <Text style={styles.toggleHost}>
           {' '}
           Host
@@ -119,15 +106,18 @@ function login() {
             value={isEnabledH}
           />
         </Text>
-      </View>
+      </View> */}
 
 
       <TouchableOpacity>
         {/* <Text style={styles.forgot}>Forgot Password?</Text> */}
       </TouchableOpacity>
+
       <TouchableOpacity 
           style={styles.loginBtn}
-            onPress={() => Alert.alert('Success')}
+            // onPress={() => Alert.alert('Success')}
+            onPress={()=> firebaseSignIn}
+            onPress={() => navigation.navigate('Profile')}
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
