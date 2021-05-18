@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Axios from 'axios';
-import {ImagePicker} from 'react-native-image-picker';
+import { ImagePicker } from 'react-native-image-picker';
 
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import UploadPic from './UploadPic';
@@ -55,10 +55,10 @@ export default class App extends React.Component {
         { value: 4, label: '4 or more' },
       ],
       zipcode: undefined,
-      address:undefined,
+      address: undefined,
       city: undefined,
-      state:undefined,
-      address:undefined,
+      state: undefined,
+      address: undefined,
       bedroom: undefined,
       restroom: undefined,
       type: undefined,
@@ -72,18 +72,24 @@ export default class App extends React.Component {
       wifi: undefined,
       stove: undefined,
       smoking: undefined,
+      photo_url: '',
     };
 
     this.InputAccessoryView = this.InputAccessoryView.bind(this);
     this.handleBedroom = this.handleBedroom.bind(this);
     this.handleBathroom = this.handleBathroom.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
   }
 
   handleBedroom(value) {
     this.setState({
       bedroom: value,
     });
+  }
+
+  handlePhotoUpload(url) {
+    this.setState({ photo_url: url });
   }
   handleBathroom(value) {
     this.setState({
@@ -93,34 +99,39 @@ export default class App extends React.Component {
 
   handleSubmit() {
     console.log('TIME to save this to the DB', this.state);
-    Axios.post('http://localhost:4002/api/listings', this.state).then(function (data) {
-      console.log('data form backedn we got back when we smacked the route!',data);
+    Axios.post('http://localhost:4002/api/listings', this.state).then(function (
+      data
+    ) {
+      console.log(
+        'data form backedn we got back when we smacked the route!',
+        data
+      );
     });
   }
   InputAccessoryView() {
-    return (
-      <View style={defaultStyles.modalViewMiddle}></View>
-    );
+    return <View style={defaultStyles.modalViewMiddle}></View>;
   }
 
   state = {
-    photo:null,
+    photo: null,
   };
 
   handleChoosePhoto = () => {
-   
     const options = {
-      noData:true
+      noData: true,
     };
-    ImagePicker.launchImageLibrary(options, response => {
-        console.log("response", response);
-        if(response.uri) {
-          this.setState({photo:response});
-        }
-    })
-  }
-// RENDER******************************************
+    ImagePicker.launchImageLibrary(options, (response) => {
+      console.log('response About to upload!', response);
+
+      if (response.uri) {
+        this.setState({ photo: response });
+      }
+    });
+  };
+  // RENDER******************************************
   render() {
+    // Create a storage reference from our storage service
+
     const placeholder = {
       label: 'Select...',
       value: null,
@@ -193,15 +204,23 @@ export default class App extends React.Component {
 
     console.log('THis is our state!!', this.state);
 
-    const {photo} =this.state;
-// RETURN*****************************************************
+    const { photo } = this.state;
+    // RETURN*****************************************************
     return (
       <View style={styles.container}>
+        <input
+          onChange={(e) => {
+            this.setState({ firstTextInput: e.target.value });
+          }}
+        ></input>
         <ScrollView
           style={styles.scrollContainer}
           contentContainerStyle={styles.scrollContentContainer}
         >
-          <UploadPic />
+          <UploadPic
+            handlePhotoUpload={this.handlePhotoUpload}
+            firstTextInput={this.state.firstTextInput}
+          />
 
           {/* <View style= {{ flex:1, alignItems: "center", justifyContent: "center"}}>
             {photo && (
@@ -215,7 +234,6 @@ export default class App extends React.Component {
               onPress={this.handleChoosePhoto}
             />
           </View> */}
-         
 
           <View paddingVertical={5} />
           <Text>Bedroom(s) Available?</Text>
@@ -254,7 +272,7 @@ export default class App extends React.Component {
             itemKey={this.state.type}
           />
 
-        <View paddingVertical={5} />
+          <View paddingVertical={5} />
           <Text>Address</Text>
           <TextInput
             onChangeText={(value) => {
@@ -272,7 +290,7 @@ export default class App extends React.Component {
             blurOnSubmit={false}
           />
 
-        <View paddingVertical={5} />
+          <View paddingVertical={5} />
           <Text>City</Text>
           <TextInput
             onChangeText={(value) => {
@@ -290,7 +308,7 @@ export default class App extends React.Component {
             blurOnSubmit={false}
           />
 
-        <View paddingVertical={5} />
+          <View paddingVertical={5} />
           <Text>State</Text>
           <TextInput
             onChangeText={(value) => {

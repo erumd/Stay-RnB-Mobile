@@ -14,6 +14,7 @@ import {
   Alert,
   Button,
 } from 'react-native';
+import firebase from '../firebase/fire';
 
 function login() {
   const [isSelected, setSelection] = useState(false);
@@ -117,7 +118,7 @@ function login() {
           style={styles.loginBtn}
             // onPress={() => Alert.alert('Success')}
             onPress={()=> firebaseSignIn}
-            onPress={() => navigation.navigate('Profile')}
+            // onPress={() => navigation.navigate('Profile')}
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>

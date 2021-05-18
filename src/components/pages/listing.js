@@ -10,27 +10,24 @@ import {
 // import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
 // const days = 7;
-const defaultPosts = 
-  {
-    id: 0,
-    image:
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
-    bed: 2,
-    bathroom: 2,
-    type: 'Apartment',
-    zipcode: 77098,
-    shared: ' Yes',
-    Price: 1500,
-    dateAvailable: 'June 2021',
-    Pet: 'Yes',
-    Parking: 'Street',
-    washer: 'Yes',
-    Wifi: 'No',
-    stove: 'No',
-    owner: 'Link to Profile',
-  };  
-
-
+const defaultPosts = {
+  id: 0,
+  image:
+    'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
+  bed: 2,
+  bathroom: 2,
+  type: 'Apartment',
+  zipcode: 77098,
+  shared: ' Yes',
+  Price: 1500,
+  dateAvailable: 'June 2021',
+  Pet: 'Yes',
+  Parking: 'Street',
+  washer: 'Yes',
+  Wifi: 'No',
+  stove: 'No',
+  owner: 'Link to Profile',
+};
 
 const Post = (props) => {
   const post = props.post;
@@ -40,35 +37,33 @@ const Post = (props) => {
   };
 
   return (
-    <View style={styles.containerListing}> 
+    <View style={styles.containerListing}>
       <Pressable onPress={goToPostPage} style={styles.container}>
-        <Image style={styles.image} source={{ uri:
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80', }} />
-        <Text style={styles.bedrooms}>
-          {post.bed} bed {post.bathroom} bathroom
+        <Image style={styles.image} source={post.photo} />
+        <Text style={styles.bedroom}>
+          {post.bed} bed {post.restroom} bathroom
         </Text>
-        <Text style={styles.description} numberOfLines={2}> 
+        <Text style={styles.description} numberOfLines={2}>
           {post.type}
         </Text>
-        <Text style={styles.zipcode}> Zipcode:{post.zipcode} </Text>
-        <Text style={styles.price}> ${post.Price}/month </Text>
-        
-        <Text style={styles.dateAvailable}> 
-           Available: {post.dateAvailable}{' '}
+        <Text style={styles.zipcode}> Zipcode:{post.zip} </Text>
+        <Text style={styles.price}> ${post.rent}/month </Text>
+
+        <Text style={styles.dateAvailable}>
+          Available: {post.availability}{' '}
         </Text>
         <Text> Shared:{post.shared}</Text>
-        <Text style={styles.pet}> Pet: {post.Pet} </Text>
+        <Text style={styles.pet}> Pet: {post.pets} </Text>
         <Text style={styles.parking}> Parking: {post.Parking} </Text>
         <Text style={styles.washer}> Washer/ Dryer: {post.washer} </Text>
-        <Text style={styles.wifi}> Wifi: {post.Wifi} </Text>
+        <Text style={styles.wifi}> Wifi: {post.wifi} </Text>
         <Text style={styles.stove}> Stove:{post.stove} </Text>
         <Text style={styles.smoking}> Smoking:{post.smoking} </Text>
-        <Text style={styles.owner}> Contact Owner:{post.owner} </Text>
+        <Text style={styles.owner}> Contact Owner:{post.contact} </Text>
 
         {/* </Text> */}
       </Pressable>
     </View>
-
   );
 };
 
@@ -89,9 +84,12 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    aspectRatio: 3 / 2,
+    aspectRatio: 2 / 1,
+    height: '10%',
     resizeMode: 'cover',
     borderRadius: 10,
+    // position: 'relative',
+    position:'absolute',
   },
 
   bedrooms: {

@@ -56,6 +56,7 @@ function signUp() {
       setError(err.message);
     }
   };
+  console.log (firebaseSignUp, "firebase");
 
   return (
     <View style={styles.containerLogin}>
@@ -156,8 +157,9 @@ function signUp() {
           //   Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')
           // }
           onPress={() => firebaseSignUp}
-          onPress={() => navigation.navigate('Profile')}
+          // onPress={() => navigation.navigate('Profile')} 
         >
+          
           <Text style={styles.loginText}>SIGNUP</Text>
         </TouchableOpacity>
         <TouchableOpacity>

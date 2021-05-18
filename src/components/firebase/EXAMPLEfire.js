@@ -1,12 +1,12 @@
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 
-const firebaseConfig = {
-    /* Add your Firebase configuration here
-*/
-  };
+// const firebaseConfig = {
+//     /* Add your Firebase configuration here
+// */
+//   };
 
-if(!firebase.apps.length){
-    firebase.initializeApp(firebaseConfig);
-}
+// if(!firebase.apps.length){
+//     firebase.initializeApp(firebaseConfig);
+// }
 
-export default firebase;
+// export default firebase;

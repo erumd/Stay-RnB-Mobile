@@ -28,10 +28,12 @@ import Signup from './src/components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
 import AddListing from './src/components/pages/Listing/addListing';
 import ListingTab from './src/components/pages/listingPage';
+// import * as firebase from 'firebase';
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const image = {
-  uri:
-    'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
+  uri: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
 };
 
 const items = [
@@ -86,8 +88,9 @@ function Home() {
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Text style={styles.homeTitle}>Stay RnB</Text>
-        <TouchableOpacity style={styles.userBtn}
-            onPress={() => navigation.navigate('ListingTab')}
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => navigation.navigate('ListingTab')}
         >
           <Text style={styles.userText}>USER</Text>
         </TouchableOpacity>
@@ -99,7 +102,7 @@ function Home() {
   );
 }
 
-// 
+//
 
 const Tab = createBottomTabNavigator();
 
@@ -109,10 +112,10 @@ function MyTabs() {
       initialRouteName="Feed"
       tabBarOptions={{
         activeTintColor: '#e91e63',
-        inactiveColor: "#95a5a6",
+        inactiveColor: '#95a5a6',
         style: {
           backgroundColor: 'white',
-      },
+        },
       }}
     >
       <Tab.Screen
