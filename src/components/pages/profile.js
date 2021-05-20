@@ -12,12 +12,8 @@ import {
 import React from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-// import Share from 'react-native-share';
 import { useNavigation } from '@react-navigation/native';
-// import files from '../assets/filesBase64';
-// import EditProfileScreen from './EditProfile';
-// import { Card } from 'react-native-elements';
-// import { Card, ListItem, Button } from 'react-native-elements'
+import firebase from '../firebase/fire';
 
 function Profile() {
   const navigation = useNavigation();
@@ -57,14 +53,14 @@ function Profile() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.userInfoSection}>
-          <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          {/* <View style={{ flexDirection: 'row', marginTop: 15 }}> */}
             {/* <Avatar.Image
             source={{
               uri: 'https://api.adorable.io/avatars/80/abott@adorable.png',
             }}
             size={80}
           /> */}
-            <View style={{ marginLeft: 20 }}>
+             {/* <View style={{ marginLeft: 20 }}>
               <Title
                 style={[
                   styles.title,
@@ -76,12 +72,28 @@ function Profile() {
               >
                 John Doe
               </Title>
+
+             
               <Caption style={styles.caption}>@user_name</Caption>
-            </View>
-          </View>
-        </View>
+            </View> */}
+          {/* </View> */}
+        </View> 
+
+        
 
         <View style={styles.userInfoSection}>
+
+        <View style={styles.row}>
+            <Icon name="human" color="#777777" size={30} />
+            <TextInput
+              style={styles.input}
+              onChangeNumber={onChangeNumber}
+              value={number}
+              placeholder="Name"
+              // keyboardType="numeric"
+            />
+          </View>
+
           <View style={styles.row}>
             <Icon name="map-marker-radius" color="#777777" size={30} />
             <TextInput
@@ -117,12 +129,6 @@ function Profile() {
               // keyboardType="email"
             />
           </View>
-          {/* <View style={styles.row}>
-            <Icon name="key" color="#777777" size={20} />
-            <Text style={{ color: 'black', marginLeft: 20, fontWeight: '900', }}>
-              Host Access
-            </Text>
-          </View> */}
         </View>
 
         <View style={styles.infoBoxWrapper}>
@@ -160,20 +166,6 @@ function Profile() {
         </View>
 
         <View style={styles.menuWrapper}></View>
-
-        {/* <View style={styles.container}>
-                <SingleCardView
-                    elevation={1}
-                    shadowColor="rgb(50,50,50)"
-                    shadowOpacity={1}
-                    marginTop={150}
-                    height={200}
-                >
-                    <Text style={{ padding: 10, fontSize: 18 }}>
-                        This is a simple card!
-                    </Text>
-                </SingleCardView>
-            </View> */}
 
         <Card>
           <Card.Content style={styles.card}>
@@ -221,57 +213,10 @@ function Profile() {
             </Button>
           </Card.Content>
         </Card> */}
-      </ScrollView>
+    </ScrollView>
     </SafeAreaView>
   );
 }
-
-// function Profile() {
-//     return (
-// <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//   <Text>Profile!</Text>
-// </View>
-// headerRight: () => (
-//   <View style={{flexDirection: 'row', marginRight: 10}}>
-//     <Icon.Button
-//       name="ios-search"
-//       size={25}
-//       color={colors.text}
-//       backgroundColor={colors.background}
-//       onPress={() => {}}
-//     />
-//     <TouchableOpacity
-//       style={{paddingHorizontal: 10, marginTop: 5}}
-//       onPress={() => {
-//         navigation.navigate('Profile');
-//       }}>
-//       <Avatar.Image
-//         source={{
-//           uri:
-//             'https://api.adorable.io/avatars/80/abott@adorable.png',
-//         }}
-//         size={30}
-//       />
-//     </TouchableOpacity>
-//   </View>
-// ),
-
-// )
-// }
-
-// function ProfileStackScreen = ({navigation}) => {
-//   headerRight: () => (
-//     <View style={{marginRight: 10}}>
-//       <MaterialCommunityIcons.Button
-//         name="account-edit"
-//         size={25}
-//         backgroundColor={colors.background}
-//         color={colors.text}
-//         onPress={() => navigation.navigate('EditProfile')}
-//       />
-//     </View>
-//   ),
-// };
 
 export default Profile;
 

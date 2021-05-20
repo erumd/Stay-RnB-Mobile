@@ -1,15 +1,8 @@
-// import Container from "./src/components/Container";
-
-// const App = () => <Container />;
-
-// export default App;
-// import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
+//  import {Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import Input from './src/components/Input';
 import Profile from './src/components/pages/profile';
-// import { Button } from 'react-bootstrap';
-// import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 
 import {
   Text,
@@ -28,10 +21,13 @@ import Signup from './src/components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
 import AddListing from './src/components/pages/Listing/addListing';
 import ListingTab from './src/components/pages/listingPage';
+import { useNavigation } from '@react-navigation/native';
+// import * as firebase from 'firebase';
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const image = {
-  uri:
-    'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
+  uri: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2467&q=80',
 };
 
 const items = [
@@ -62,6 +58,7 @@ function ProfileStackScreen() {
 
 const HomeStack = createStackNavigator();
 function HomeStackScreen() {
+  
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Profile" component={Profile} />
@@ -82,68 +79,30 @@ const App = () => {
 
 function Home() {
   // const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Text style={styles.homeTitle}>Stay RnB</Text>
-        <TouchableOpacity style={styles.userBtn}
-            onPress={() => navigation.navigate('ListingTab')}
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => navigation.navigate('Listing')}
         >
-          <Text style={styles.userText}>USER</Text>
+          <Text style={styles.userText}>View Listing</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ownerBtn}>
-          <Text style={styles.ownerText}>Host</Text>
+        <TouchableOpacity 
+            style={styles.ownerBtn}
+            onPress={() => navigation.navigate('Login')}
+        
+        >
+          <Text style={styles.ownerText}>Add Listing</Text>
         </TouchableOpacity>
       </ImageBackground>
     </View>
   );
 }
 
-// function Profile() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Profile!</Text>
-//     </View>
-//   );
-// }
-
-// function Login() {
-//   return (
-//     <View style={styles.containerLogin}>
-//       <Text style={styles.logo}>Stay RnB</Text>
-//       <Input placeholder="Email..." />
-
-//       {/* <View style={styles.usernameView}>
-//         <TextInput
-//           style={styles.inputText}
-//           placeholder="Username..."
-//           placeholderTextColor="#003f5c"
-//           onChangeText={(text) => this.setState({ username: text })}
-//         />
-//       </View> */}
-
-//       <View style={styles.inputView}>
-//         <TextInput
-//           secureTextEntry
-//           style={styles.inputText}
-//           placeholder="Password..."
-//           placeholderTextColor="#003f5c"
-//           onChangeText={(text) => ({ password: text })}
-//         />
-//       </View>
-
-//       {/* <TouchableOpacity>
-//         <Text style={styles.forgot}>Forgot Password?</Text>
-//       </TouchableOpacity> */}
-//       <TouchableOpacity style={styles.loginBtn}>
-//         <Text style={styles.loginText}>LOGIN</Text>
-//       </TouchableOpacity>
-//       <TouchableOpacity>
-//         <Text style={styles.loginText}>Signup</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// }
+//
 
 const Tab = createBottomTabNavigator();
 
@@ -153,10 +112,10 @@ function MyTabs() {
       initialRouteName="Feed"
       tabBarOptions={{
         activeTintColor: '#e91e63',
-        inactiveColor: "#95a5a6",
+        inactiveColor: '#95a5a6',
         style: {
           backgroundColor: 'white',
-      },
+        },
       }}
     >
       <Tab.Screen

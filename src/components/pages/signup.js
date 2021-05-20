@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {
   View,
   Text,
@@ -13,11 +14,13 @@ import {
   Alert,
   ScrollView,
 } from 'react-native';
+import firebase from '../firebase/fire';
 
 function signUp() {
   const [isSelected, setSelection] = useState(false);
   const [isEnabledH, setIsEnabledH] = useState(false);
   const [isEnabledU, setIsEnabledU] = useState(false);
+  const navigation = useNavigation();
   // Inverse for Toogle
   const toggleSwitchH = () => {
     if (isEnabledH === false) {
@@ -35,12 +38,27 @@ function signUp() {
       setIsEnabledU(false);
     }
   };
-  // States added for input 
+  // States added for input
   const [Firstname, setFirstname] = useState('');
   const [Lastname, setLastname] = useState('');
   const [Username, setUsername] = useState('');
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const firebaseSignUp = async () => {
+    try {
+      const response = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(Email, Password);
+        console.log (Email, "This is email");
+        console.log (Password, "This is password");
+      navigation.navigate('Profile');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  // console.log (firebaseSignUp, "firebase");
 
   return (
     <View style={styles.containerLogin}>
@@ -49,19 +67,18 @@ function signUp() {
         <View paddingVertical={20} />
 
         <Text style={styles.logo}>Stay RnB</Text>
-        <View style={styles.inputView}>
+        {/* <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
             placeholder="First Name..."
             placeholderTextColor="#003f5c"
-            // onChangeText={(text) => this.setState({ firstName: text })}
             onChangeText={() => {
               setFirstname(Firstname);
             }}
           />
-        </View>
+        </View> */}
 
-        <View style={styles.inputView}>
+        {/* <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
             placeholder="Last Name..."
@@ -70,9 +87,9 @@ function signUp() {
               setLastname(Lastname);
             }}
           />
-        </View>
+        </View> */}
 
-        <View style={styles.inputView}>
+        {/* <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
             placeholder="Username..."
@@ -81,7 +98,7 @@ function signUp() {
               setUsername(Username);
             }}
           />
-        </View>
+        </View> */}
 
         <View style={styles.inputView}>
           <TextInput
@@ -105,8 +122,9 @@ function signUp() {
             }}
           />
         </View>
+        {error ? <Text style={{ color: 'red' }}>{error}</Text> : null}
 
-        <View>
+        {/* <View>
           <Text style={styles.toggleUser}>
             {' '}
             User
@@ -118,9 +136,9 @@ function signUp() {
               value={isEnabledU}
             />
           </Text>
-        </View>
+        </View> */}
 
-        <View>
+        {/* <View>
           <Text style={styles.toggleHost}>
             {' '}
             Host
@@ -132,15 +150,18 @@ function signUp() {
               value={isEnabledH}
             />
           </Text>
-        </View>
+        </View> */}
 
         <TouchableOpacity></TouchableOpacity>
         <TouchableOpacity
           style={styles.loginBtn}
-          onPress={() =>
-            Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')
-          }
+          // onPress={() =>
+          //   Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')
+          // }
+          onPress={() => firebaseSignUp}
+          // onPress={() => navigation.navigate('Profile')} 
         >
+          
           <Text style={styles.loginText}>SIGNUP</Text>
         </TouchableOpacity>
         <TouchableOpacity>
