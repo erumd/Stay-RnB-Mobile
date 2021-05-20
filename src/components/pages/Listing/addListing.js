@@ -17,9 +17,9 @@ import {
 } from 'react-native';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Axios from 'axios';
-import { ImagePicker } from 'react-native-image-picker';
 
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+
 import UploadPic from './UploadPic';
 
 export default class App extends React.Component {
@@ -54,6 +54,7 @@ export default class App extends React.Component {
         { value: 3, label: '3' },
         { value: 4, label: '4 or more' },
       ],
+      firstTextInput: undefined,
       zipcode: undefined,
       address: undefined,
       city: undefined,
@@ -72,7 +73,8 @@ export default class App extends React.Component {
       wifi: undefined,
       stove: undefined,
       smoking: undefined,
-      photo_url: '',
+      photo_url:
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80',
     };
 
     this.InputAccessoryView = this.InputAccessoryView.bind(this);
@@ -103,7 +105,7 @@ export default class App extends React.Component {
       data
     ) {
       console.log(
-        'data form backedn we got back when we smacked the route!',
+        'data form backend we got back when we smacked the route!',
         data
       );
     });
@@ -116,18 +118,6 @@ export default class App extends React.Component {
     photo: null,
   };
 
-  handleChoosePhoto = () => {
-    const options = {
-      noData: true,
-    };
-    ImagePicker.launchImageLibrary(options, (response) => {
-      console.log('response About to upload!', response);
-
-      if (response.uri) {
-        this.setState({ photo: response });
-      }
-    });
-  };
   // RENDER******************************************
   render() {
     // Create a storage reference from our storage service
@@ -208,11 +198,11 @@ export default class App extends React.Component {
     // RETURN*****************************************************
     return (
       <View style={styles.container}>
-        <input
+        <TextInput
           onChange={(e) => {
             this.setState({ firstTextInput: e.target.value });
           }}
-        ></input>
+        ></TextInput>
         <ScrollView
           style={styles.scrollContainer}
           contentContainerStyle={styles.scrollContentContainer}
@@ -221,19 +211,6 @@ export default class App extends React.Component {
             handlePhotoUpload={this.handlePhotoUpload}
             firstTextInput={this.state.firstTextInput}
           />
-
-          {/* <View style= {{ flex:1, alignItems: "center", justifyContent: "center"}}>
-            {photo && (
-              <Image 
-                  source= {{uri:photo.uri}}
-                  style={{width: 300, height:300}}
-              />
-            )}
-            <Button
-              title= "Choose Photo"
-              onPress={this.handleChoosePhoto}
-            />
-          </View> */}
 
           <View paddingVertical={5} />
           <Text>Bedroom(s) Available?</Text>
@@ -573,20 +550,3 @@ const pickerSelectStyles = StyleSheet.create({
     paddingRight: 30, // to ensure the text is never behind the icon
   },
 });
-
-// const styles = style.create ({
-// userBtn: {
-//   width: '80%',
-//   backgroundColor: 'turquoise',
-//   borderRadius: 25,
-//   height: 50,
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   marginTop: 40,
-//   marginBottom: 10,
-// },
-// userText: {
-//   color: 'white',
-//   fontWeight: 'bold',
-// },
-// });

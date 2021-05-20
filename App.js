@@ -1,15 +1,8 @@
-// import Container from "./src/components/Container";
-
-// const App = () => <Container />;
-
-// export default App;
-// import {Profile, Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
+//  import {Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import Input from './src/components/Input';
 import Profile from './src/components/pages/profile';
-// import { Button } from 'react-bootstrap';
-// import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 
 import {
   Text,
@@ -28,6 +21,7 @@ import Signup from './src/components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
 import AddListing from './src/components/pages/Listing/addListing';
 import ListingTab from './src/components/pages/listingPage';
+import { useNavigation } from '@react-navigation/native';
 // import * as firebase from 'firebase';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -64,6 +58,7 @@ function ProfileStackScreen() {
 
 const HomeStack = createStackNavigator();
 function HomeStackScreen() {
+  
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Profile" component={Profile} />
@@ -84,18 +79,23 @@ const App = () => {
 
 function Home() {
   // const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Text style={styles.homeTitle}>Stay RnB</Text>
         <TouchableOpacity
           style={styles.userBtn}
-          onPress={() => navigation.navigate('ListingTab')}
+          onPress={() => navigation.navigate('Listing')}
         >
-          <Text style={styles.userText}>USER</Text>
+          <Text style={styles.userText}>View Listing</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ownerBtn}>
-          <Text style={styles.ownerText}>Host</Text>
+        <TouchableOpacity 
+            style={styles.ownerBtn}
+            onPress={() => navigation.navigate('Login')}
+        
+        >
+          <Text style={styles.ownerText}>Add Listing</Text>
         </TouchableOpacity>
       </ImageBackground>
     </View>

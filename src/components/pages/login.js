@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
   View,
@@ -15,8 +15,62 @@ import {
   Button,
 } from 'react-native';
 import firebase from '../firebase/fire';
+import * as WebBrowser from 'expo-web-browser';
+import * as Google from 'expo-auth-session/providers/google';
+import { render } from 'react-dom';
+WebBrowser.maybeCompleteAuthSession();
+
+class LoginScreen extends Component {
+ signInWithGoogleAsync= async () => {
+    try {
+      const result = await Google.logInAsync({
+        // androidClientId: '667669470258-u12gcn1tb2qc98s8ku5c1n4e92uvj87i.apps.googleusercontent.com',
+        behavior: 'web',
+        iosClientId: '667669470258-c0kr1hl34u765uqdilc2j6u3ceg5rr1b.apps.googleusercontent.com',
+        scopes: ['profile', 'email'],
+      });
+
+      if (result.type === 'success') {
+        return result.accessToken;
+      } else {
+        return { cancelled: true };
+      }
+    } catch (e) {
+      return { error: true };
+    }
+ };
+  render() {
+    return (
+      <View >
+        <Button 
+            title= "GoogleLogin"
+            onPress={() => this.signInWithGoogleAsync()}
+        
+        />
+      </View>
+    );
+  }
+ }
+
 
 function login() {
+// Google login
+  // const [request, response, promptAsync] = Google.useAuthRequest({
+  //   expoClientId: 'GOOGLE_GUID.apps.googleusercontent.com',
+  //   iosClientId: '667669470258-c0kr1hl34u765uqdilc2j6u3ceg5rr1b.apps.googleusercontent.com',
+  //   androidClientId: '667669470258-u12gcn1tb2qc98s8ku5c1n4e92uvj87i.apps.googleusercontent.com',
+  //   webClientId: 'GOOGLE_GUID.apps.googleusercontent.com',
+  // });
+  // React.useEffect(() => {
+  //   if (response?.type === 'success') {
+  //     const { authentication } = response;
+  //     }
+  // }, [response]);
+
+
+     
+
+
   const [isSelected, setSelection] = useState(false);
   const navigation = useNavigation();
     // States added for input 
@@ -46,15 +100,15 @@ function login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const firebaseSignIn = async () => {
-    try {
-        const response = await firebase.auth().signInWithEmailAndPassword(email, password);
-        navigation.navigate('Profile');
-    } catch (err) {
-        setError(err.message);
-    }
+//   const firebaseSignIn = async () => {
+//     try {
+//         const response = await firebase.auth().signInWithEmailAndPassword(email, password);
+//         navigation.navigate('Profile');
+//     } catch (err) {
+//         setError(err.message);
+//     }
 
-}
+// }
 
 
   return (
@@ -110,15 +164,18 @@ function login() {
       </View> */}
 
 
-      <TouchableOpacity>
+      {/* <TouchableOpacity> */}
         {/* <Text style={styles.forgot}>Forgot Password?</Text> */}
-      </TouchableOpacity>
+      {/* </TouchableOpacity> */}
 
       <TouchableOpacity 
           style={styles.loginBtn}
             // onPress={() => Alert.alert('Success')}
-            onPress={()=> firebaseSignIn}
-            // onPress={() => navigation.navigate('Profile')}
+            // onPress={()=> firebaseSignIn}
+            onPress={() => navigation.navigate('Profile')}
+            // onPress={() => {promptAsync();}}
+            // disabled={!request}
+            // onPress={() => this.signInWithGoogleAsync()}
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>

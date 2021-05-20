@@ -50,13 +50,15 @@ function signUp() {
     try {
       const response = await firebase
         .auth()
-        .createUserWithEmailAndPassword(email, password);
+        .createUserWithEmailAndPassword(Email, Password);
+        console.log (Email, "This is email");
+        console.log (Password, "This is password");
       navigation.navigate('Profile');
     } catch (err) {
       setError(err.message);
     }
   };
-  console.log (firebaseSignUp, "firebase");
+  // console.log (firebaseSignUp, "firebase");
 
   return (
     <View style={styles.containerLogin}>

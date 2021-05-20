@@ -9,6 +9,7 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
+import {Card} from 'react-native-paper'
 import Post from './listing';
 import { Fontisto } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -58,9 +59,11 @@ function Listing() {
           <Input placeholder="ZipCode..." />
         </View>
 
-        {listings.map((el, i) => (
-          <Post key={i} post={el} />
-        ))}
+            {listings.map((el, i) => (
+              <Post key={i} post={el} />
+            ))}
+         
+        
       </ScrollView>
     </SafeAreaView>
   );

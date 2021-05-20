@@ -7,9 +7,7 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
-// import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
-// const days = 7;
 const defaultPosts = {
   id: 0,
   image:
@@ -37,8 +35,8 @@ const Post = (props) => {
   };
 
   return (
-    <View style={styles.containerListing}>
-      <Pressable onPress={goToPostPage} style={styles.container}>
+    <View >
+      <View onPress={goToPostPage} style={styles.container}>
         <Image style={styles.image} source={post.photo} />
         <Text style={styles.bedroom}>
           {post.bed} bed {post.restroom} bathroom
@@ -62,7 +60,7 @@ const Post = (props) => {
         <Text style={styles.owner}> Contact Owner:{post.contact} </Text>
 
         {/* </Text> */}
-      </Pressable>
+      </View>
     </View>
   );
 };
@@ -81,15 +79,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#003f5c',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '50%',
   },
   image: {
-    width: '100%',
-    aspectRatio: 2 / 1,
-    height: '10%',
-    resizeMode: 'cover',
+    width: '50%',
+    height: '50%',
+    right: '0%',
+    // aspectRatio: 2 / 1,
+    // top: '80%',
+    // resizeMode: 'cover',
+    // resizeMode: 'stretch',
+
     borderRadius: 10,
     // position: 'relative',
     position:'absolute',
+    // display: 'block',
   },
 
   bedrooms: {
