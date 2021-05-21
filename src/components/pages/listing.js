@@ -38,7 +38,9 @@ const Post = (props) => {
   return (
     <View >
       <View onPress={goToPostPage} style={styles.container}>
-        <Image style={styles.image} source={post.image} />
+        {/* { <Image style={styles.image} source={post.image} /> */}
+         <Image style={styles.image} source={(post.image)} /> 
+        {/* source={require('@expo/snack-static/react-native-logo.png')} */}
         <Text style={styles.bedroom}>
           {post.bed} bed {post.restroom} bathroom
         </Text>
@@ -71,11 +73,39 @@ const Post = (props) => {
 export default Post;
 
 const styles = StyleSheet.create({
+  // container: {
+  //   margin: '10%',
+  //   backgroundColor: 'turquoise',
+  //   width: '100%',
+  //   // height: '110%',
+    
+  // },
+  // containerListing: {
+  //   flex: 1,
+  //   backgroundColor: '#003f5c',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   width: '50%',
+  // },
+  // image: {
+  //   width: '30%',
+  //   height: '30%',
+  //   // right: '0%',
+  //   justifyContent: 'center',
+  //   aspectRatio: 2 / 1,
+  //   // top: '80%',
+  //   // resizeMode: 'cover',
+  //   // resizeMode: 'stretch',
+
+  //   borderRadius: 10,
+  //   // position: 'relative',
+  //   // position:'absolute',
+  //   // display: 'block',
+  // },
+
   container: {
-    margin: '10%',
+    margin: 20,
     backgroundColor: 'turquoise',
-    width: '100%',
-    // height: '110%',
     
   },
   // containerListing: {
@@ -88,16 +118,15 @@ const styles = StyleSheet.create({
   image: {
     width: '30%',
     height: '30%',
-    // right: '0%',
-    justifyContent: 'center',
-    aspectRatio: 2 / 1,
+    right: '0%',
+    // aspectRatio: 2 / 1,
     // top: '80%',
     // resizeMode: 'cover',
     // resizeMode: 'stretch',
 
     borderRadius: 10,
     // position: 'relative',
-    // position:'absolute',
+    position:'absolute',
     // display: 'block',
   },
 
