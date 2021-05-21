@@ -12,8 +12,9 @@ https://expo.io/@erumdhukka/projects/stayrnb
 
 https://github.com/erumd/Stay-RnB-Mobile
 
-# Desktop Version
+# Web Version
 Repo: https://github.com/code-monkey713/Stay-RnB-Web
+Web Deployment: https://stay-rnb.herokuapp.com/
 
 # Server-Side
 Repo: https://github.com/Joeseff6/Stay-RnB-Backend

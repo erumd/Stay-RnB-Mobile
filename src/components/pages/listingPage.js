@@ -43,7 +43,7 @@ function Listing() {
   const [listings, setListings] = useState([defaultPosts]);
 
   useEffect(() => {
-    Axios.get('http://localhost:4002/api/listings').then(function (
+    Axios.get('http://localhost:3001/api/listings').then(function (
       listingsFromDB
     ) {
       console.log('Listings from DB!!!', listingsFromDB);
