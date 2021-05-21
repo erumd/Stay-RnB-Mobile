@@ -78,7 +78,7 @@ export default class App extends React.Component {
 
     this.InputAccessoryView = this.InputAccessoryView.bind(this);
     this.handleBedroom = this.handleBedroom.bind(this);
-    this.handleBathroom = this.handleBathroom.bind(this);
+    this.handleRestroom = this.handleRestroom.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
   }
@@ -92,7 +92,7 @@ export default class App extends React.Component {
   handlePhotoUpload(url) {
     this.setState({ photo_url: url });
   }
-  handleBathroom(value) {
+  handleRestroom(value) {
     this.setState({
       restroom: value,
     });
@@ -227,7 +227,7 @@ export default class App extends React.Component {
           <RNPickerSelect
             placeholder={{ placeholder }}
             items={restroom}
-            onValueChange={this.handleBathroom}
+            onValueChange={this.handleRestroom}
             InputAccessoryView={() => null}
             style={pickerSelectStyles}
             itemKey={this.state.restroom}
