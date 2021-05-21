@@ -22,7 +22,7 @@ const defaultPosts = {
   image:
     'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
   bed: 2,
-  bathroom: 2,
+  restroom: 2,
   type: 'Apartment',
   zip: 77498,
   shared: ' Yes',
@@ -43,7 +43,7 @@ function Listing() {
   const [listings, setListings] = useState([defaultPosts]);
 
   useEffect(() => {
-    Axios.get('http://localhost:3001/api/listings').then(function (
+    Axios.get('http://localhost:4002/api/listings').then(function (
       listingsFromDB
     ) {
       console.log('Listings from DB!!!', listingsFromDB);

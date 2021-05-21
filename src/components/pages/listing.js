@@ -14,7 +14,7 @@ const defaultPosts = {
   image:
     'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
   bed: 2,
-  bathroom: 2,
+  restroom: 2,
   type: 'Apartment',
   zip: 77098,
   shared: ' Yes',
@@ -38,9 +38,16 @@ const Post = (props) => {
   return (
     <View >
       <View onPress={goToPostPage} style={styles.container}>
-        <Image style={styles.image} source={post.image} />
+         <Image style={styles.image} source={post.image} />
+         {/* <Image style={styles.image} source={(post.image)} />   */}
+      {/* //    <Image
+      //   style={styles.image}
+      //   source={{
+      //     uri: post.image,
+      //   }}
+       />  */}
         <Text style={styles.bedroom}>
-          {post.bed} bed {post.restroom} bathroom
+          {post.bed} bed {post.restroom} Restroom
         </Text>
         <Text style={styles.description} numberOfLines={2}>
           {post.type}
@@ -53,7 +60,7 @@ const Post = (props) => {
         </Text>
         <Text> Shared:{post.shared}</Text>
         <Text style={styles.pet}> Pet: {post.pets} </Text>
-        <Text style={styles.parking}> Parking: {post.Parking} </Text>
+        <Text style={styles.parking}> Parking: {post.parking} </Text>
         <Text style={styles.washer}> Washer/ Dryer: {post.washer} </Text>
         <Text style={styles.wifi}> Wifi: {post.wifi} </Text>
         <Text style={styles.stove}> Stove:{post.stove} </Text>
@@ -71,11 +78,39 @@ const Post = (props) => {
 export default Post;
 
 const styles = StyleSheet.create({
+  // container: {
+  //   margin: '10%',
+  //   backgroundColor: 'turquoise',
+  //   width: '100%',
+  //   // height: '110%',
+    
+  // },
+  // containerListing: {
+  //   flex: 1,
+  //   backgroundColor: '#003f5c',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   width: '50%',
+  // },
+  // image: {
+  //   width: '30%',
+  //   height: '30%',
+  //   // right: '0%',
+  //   justifyContent: 'center',
+  //   aspectRatio: 2 / 1,
+  //   // top: '80%',
+  //   // resizeMode: 'cover',
+  //   // resizeMode: 'stretch',
+
+  //   borderRadius: 10,
+  //   // position: 'relative',
+  //   // position:'absolute',
+  //   // display: 'block',
+  // },
+
   container: {
-    margin: '10%',
+    margin: 20,
     backgroundColor: 'turquoise',
-    width: '100%',
-    // height: '110%',
     
   },
   // containerListing: {
@@ -88,16 +123,15 @@ const styles = StyleSheet.create({
   image: {
     width: '30%',
     height: '30%',
-    // right: '0%',
-    justifyContent: 'center',
-    aspectRatio: 2 / 1,
+    right: '0%',
+    // aspectRatio: 2 / 1,
     // top: '80%',
     // resizeMode: 'cover',
     // resizeMode: 'stretch',
 
     borderRadius: 10,
     // position: 'relative',
-    // position:'absolute',
+    position:'absolute',
     // display: 'block',
   },
 
