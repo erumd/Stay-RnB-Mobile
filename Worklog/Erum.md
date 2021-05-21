@@ -1,12 +1,16 @@
 ## Erum's Worklog and #TODO:
 
+## Wednesday May 19
+
+https://firebase.google.com/docs/auth/web/google-signin
+
 ## Tuesday May 18
-Google login with Firebase 
+
+Google login with Firebase
 https://snack.expo.io/@erumdhukka/60cdfa
 
-EXPO sign in with Google 
+EXPO sign in with Google
 https://docs.expo.io/versions/v41.0.0/sdk/google/
-
 
 ## Tuesday April 21
 

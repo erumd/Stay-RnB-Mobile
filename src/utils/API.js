@@ -10,4 +10,9 @@ export default {
   createUser: (userData) => {
     return axios.post('/api/users', userData);
   },
+
+  // login for users
+  userLogin: (userInfo) => {
+    return axios.post('/api/users/login', userInfo);
+  },
 };

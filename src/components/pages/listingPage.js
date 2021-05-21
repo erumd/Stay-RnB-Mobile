@@ -24,10 +24,10 @@ const defaultPosts = {
   bed: 2,
   bathroom: 2,
   type: 'Apartment',
-  zipcode: 99999,
+  zip: 77498,
   shared: ' Yes',
-  Price: 1500,
-  dateAvailable: 'June 2021',
+  rent: 1500,
+  availability: 'Sep 2021',
   Pet: 'Yes',
   Parking: 'Street',
   washer: 'Yes',
@@ -43,7 +43,7 @@ function Listing() {
   const [listings, setListings] = useState([defaultPosts]);
 
   useEffect(() => {
-    Axios.get('http://localhost:4002/api/listings').then(function (
+    Axios.get('http://localhost:3001/api/listings').then(function (
       listingsFromDB
     ) {
       console.log('Listings from DB!!!', listingsFromDB);
