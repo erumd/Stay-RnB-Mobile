@@ -9,7 +9,7 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
-import {Card} from 'react-native-paper'
+import { Card } from 'react-native-paper';
 import Post from './listing';
 import { Fontisto } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -19,10 +19,10 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 const defaultPosts = {
   id: 0,
-  image:
+  photo:
     'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80',
   bed: 2,
-  restroom: 2,
+  bathroom: 2,
   type: 'Apartment',
   zip: 77498,
   shared: ' Yes',
@@ -59,11 +59,9 @@ function Listing() {
           <Input placeholder="ZipCode..." />
         </View>
 
-            {listings.map((el, i) => (
-              <Post key={i} post={el} />
-            ))}
-         
-        
+        {listings.map((el, i) => (
+          <Post key={i} post={el} />
+        ))}
       </ScrollView>
     </SafeAreaView>
   );

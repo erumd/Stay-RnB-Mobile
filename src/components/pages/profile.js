@@ -175,7 +175,7 @@ function Profile() {
               }}
             />
             <Title name="address">6100 Main St, Houston, TX 77005</Title>
-            <Paragraph>Card content</Paragraph>
+            {/* <Paragraph>Card content</Paragraph> */}
             {/* <Button color="red" outline="10%" type="submit">
               {' '}
               Delete
@@ -225,12 +225,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'turquoise',
   },
-  card: {},
+  card: {
+    paddingVertical: 12,
+  },
   userInfoSection: {
     paddingHorizontal: 30,
     marginBottom: 25,
     color: 'turquoise',
   },
+  
   title: {
     fontSize: 24,
     fontWeight: 'bold',

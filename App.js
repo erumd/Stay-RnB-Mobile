@@ -17,12 +17,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Listing from './src/components/pages/listingPage';
 import Login from './src/components/pages/login';
+import LoginScreen from './src/components/pages/googleLogin'
 import Signup from './src/components/pages/signup';
 import { createStackNavigator } from '@react-navigation/stack';
 import AddListing from './src/components/pages/Listing/addListing';
 import ListingTab from './src/components/pages/listingPage';
 import { useNavigation } from '@react-navigation/native';
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
+import {Firebase} from './src/components/firebase/fire';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
