@@ -4,7 +4,9 @@
 
 ## Description
 
-This application lets user add homes to rent out. Listings are available for anyone to view but in order to post you have to sign up. This application is a web and mobile component.
+This is an application for booking room and boarding when you don't need a full apartment or house for rent. When you are looking for the minimum place to stay and sleep without the hassle of paying for full apartments or houses, we are here to solve your problem. Our application will connect the user with property owners that will host their available rooms for boarding. Property owners who have spare bedrooms they want to share out can come sign up to get with users who might need a room for boarding that are looking in the area. 
+
+We will have the web portal for users on their desktop and mobile app if they are on their mobile phones. Stay tuned for more information! 
 
 ## Table of Contents
 
