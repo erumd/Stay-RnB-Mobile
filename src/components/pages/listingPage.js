@@ -59,7 +59,6 @@ function Listing() {
   console.log('LISTING STATE!!!', listings);
   return (
     <SafeAreaView style={styles.container}>
-      {/* <ScrollView horizontal={true}> */}
       <ScrollView>
         <View style={styles.container}>
           <Input placeholder="ZipCode..." />

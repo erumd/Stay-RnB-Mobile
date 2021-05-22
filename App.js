@@ -1,4 +1,3 @@
-//  import {Listing, Login} from '../Stay-RnB-Mobile/src/components/pages'
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import Input from './src/components/Input';
