@@ -43,7 +43,7 @@ Part 2 (Mobile) Repo)
 
 ## Mobile Version
 
-Expo: https://expo.io/@erumdhukka/projects/stayrnb
+Expo: https://expo.io/@erumdhukka/projects/stay_rnb
 Repo: https://github.com/erumd/Stay-RnB-Mobile
 Backend Repo: https://github.com/erumd/Stay-RnB-Mobile-Backend
 
@@ -84,6 +84,14 @@ Tony Tran - Desktop/React application development/Project Manager
 - GitHub: https://github.com/Joeseff6
 - Email: josephsoria6@gmail.com
 
+## Resources
+This was a hard project to learn and complete. I read up on lots of resources online and watched videos to guide me. Here are some that really helped.
+[Pradip Debnath](https://www.youtube.com/watch?v=mjJzaiGkaQA&ab_channel=PradipDebnath)
+[React Native Documentation](https://reactnative.dev/)
+[Youssef El Habchi](https://reactnativemaster.com/react-native-login-screen-tutorial)
+[Vadim Savin]
+https://www.youtube.com/watch?v=iQ_0Fd_N3Mk&t=1824s&ab_channel=VadimSavin 
+https://www.youtube.com/watch?v=ZxkmTsEYfg8&ab_channel=VadimSavin
 # License
 
 MIT License
