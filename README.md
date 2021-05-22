@@ -20,6 +20,8 @@ This is a mobile app for users to use to view and post listings.
 
 ## Installation
 
+To view Stay RnB on mobile app download [Epo Go](https://expo.io/client) and scan the QR code ![Screenshot](./images/ExpoGo.png).
+
 Part 1 [Mobile Backend Repo](https://github.com/erumd/Stay-RnB-Mobile-Backend)
 
 1. Clone repo.
