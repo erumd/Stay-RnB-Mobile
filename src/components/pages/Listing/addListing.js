@@ -45,6 +45,7 @@ export default class App extends React.Component {
       smoking: null,
       true: true,
       favSport5: true,
+      photo_url: null,
     };
 
     this.state = {

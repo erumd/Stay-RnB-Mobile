@@ -158,8 +158,8 @@ function signUp() {
           // onPress={() =>
           //   Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')
           // }
-          onPress={() => firebaseSignUp}
-          // onPress={() => navigation.navigate('Profile')} 
+          // onPress={() => firebaseSignUp}
+          onPress={() => navigation.navigate('Profile')} 
         >
           
           <Text style={styles.loginText}>SIGNUP</Text>
