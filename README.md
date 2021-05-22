@@ -20,14 +20,14 @@ This is a mobile app for users to use to view and post listings.
 
 ## Installation
 
-Part 1 (Backend Repo)
+Part 1 [Mobile Backend Repo](https://github.com/erumd/Stay-RnB-Mobile-Backend)
 
 1. Clone repo.
 2. Cd into directory.
 3. "Npm install"
 4. In terminal "npm run watch" OR "node server.js"
 
-Part 2 (Mobile) Repo)
+Part 2 [Mobile Repo](https://github.com/erumd/Stay-RnB-Mobile)
 
 1. Clone repo.
 2. Cd into directory.
