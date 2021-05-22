@@ -4,9 +4,9 @@
 
 ## Description
 
-This is an application for booking room and boarding for rent. When you are looking for the minimum place to stay and sleep without the hassle of paying for full apartments or houses, we are here to solve your problem. Our application will connect the user with property owners that will host their available rooms for boarding. Property owners who have spare bedrooms they want to rent out to users. 
+This is an application for booking room and boarding for rent. When you are looking for the minimum place to stay and sleep without the hassle of paying for full apartments or houses, we are here to solve your problem. Our application will connect the user with property owners that will host their available rooms for boarding. Property owners who have spare bedrooms they want to rent out to users.
 
-This is a mobile app for users to use to view and post listings. 
+This is a mobile app for users to use to view and post listings.
 
 ## Table of Contents
 
@@ -85,13 +85,15 @@ Tony Tran - Desktop/React application development/Project Manager
 - Email: josephsoria6@gmail.com
 
 ## Resources
+
 This was a hard project to learn and complete. I read up on lots of resources online and watched videos to guide me. Here are some that really helped.
-[Pradip Debnath](https://www.youtube.com/watch?v=mjJzaiGkaQA&ab_channel=PradipDebnath)
-[React Native Documentation](https://reactnative.dev/)
-[Youssef El Habchi](https://reactnativemaster.com/react-native-login-screen-tutorial)
-[Vadim Savin]
-https://www.youtube.com/watch?v=iQ_0Fd_N3Mk&t=1824s&ab_channel=VadimSavin 
-https://www.youtube.com/watch?v=ZxkmTsEYfg8&ab_channel=VadimSavin
+
+    https://www.youtube.com/watch?v=mjJzaiGkaQA&ab_channel=PradipDebnath
+    https://reactnative.dev/
+    https://reactnativemaster.com/react-native-login-screen-tutorial
+    https://www.youtube.com/watch?v=iQ_0Fd_N3Mk&t=1824s&ab_channel=VadimSavin
+    https://www.youtube.com/watch?v=ZxkmTsEYfg8&ab_channel=VadimSavin
+
 # License
 
 MIT License
