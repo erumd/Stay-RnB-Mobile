@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Stay-RnB (Fri May 21)",
-    "slug": "stay_rnb2",
+    "name": "Stay-RnB (Presentation)",
+    "slug": "stay_rnb",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "This is a mobile app for booking rooms and boarding for rent. When you are looking for the minimum place to stay and sleep without the hassle of paying for full apartments or houses, we are here to solve your problem.  \n\n",
+    "githubUrl": "https://github.com/erumd/Stay-RnB-Mobile/"
   }
 }

@@ -24,7 +24,7 @@ class LoginScreen extends Component {
  signInWithGoogleAsync= async () => {
     try {
       const result = await Google.logInAsync({
-        // androidClientId: '667669470258-u12gcn1tb2qc98s8ku5c1n4e92uvj87i.apps.googleusercontent.com',
+        androidClientId: '667669470258-u12gcn1tb2qc98s8ku5c1n4e92uvj87i.apps.googleusercontent.com',
         behavior: 'web',
         iosClientId: '667669470258-c0kr1hl34u765uqdilc2j6u3ceg5rr1b.apps.googleusercontent.com',
         scopes: ['profile', 'email'],
@@ -68,9 +68,6 @@ function login() {
   }, [response]);
 
 
-     
-
-
   const [isSelected, setSelection] = useState(false);
   const navigation = useNavigation();
     // States added for input 
@@ -100,16 +97,6 @@ function login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-//   const firebaseSignIn = async () => {
-//     try {
-//         const response = await firebase.auth().signInWithEmailAndPassword(email, password);
-//         navigation.navigate('Profile');
-//     } catch (err) {
-//         setError(err.message);
-//     }
-
-// }
-
 
   return (
     <View style={styles.containerLogin}>
@@ -119,8 +106,6 @@ function login() {
           style={styles.inputText}
           placeholder="Email..."
           placeholderTextColor="#003f5c"
-          // onChangeText={(text) => this.setState({email:text})}
-          // onChangeText={() => {setEmail('email@email.com')}}
           onChangeText={() => {setEmail(email)}}
         />
       </View>
@@ -136,37 +121,6 @@ function login() {
         />
       </View>
 
-      {/* <View>
-        <Text style={styles.toggleUser}> User 
-      <Switch
-        trackColor={{ false: "#767577", true: "turquoise" }}
-        thumbColor={isEnabledU ? "#f5dd4b" : "#465881"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitchU}
-        value={isEnabledU}
-      />
-      </Text>
-        </View> */}
-
-      {/* <View>
-        <Text style={styles.toggleHost}>
-          {' '}
-          Host
-          <Switch
-            trackColor={{ false: '#767577', true: 'turquoise' }}
-            thumbColor={isEnabledH ? '#f5dd4b' : '#465881'}
-            ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitchH}
-            // onValueChange={()=>toggleSwitch(“H”)}
-            value={isEnabledH}
-          />
-        </Text>
-      </View> */}
-
-
-      {/* <TouchableOpacity> */}
-        {/* <Text style={styles.forgot}>Forgot Password?</Text> */}
-      {/* </TouchableOpacity> */}
 
       <TouchableOpacity 
           style={styles.loginBtn}
@@ -174,7 +128,6 @@ function login() {
             // onPress={()=> firebaseSignIn}
             onPress={() => navigation.navigate('Profile')}
             // onPress={() => {promptAsync();}}
-            // disabled={!request}
             // onPress={() => this.signInWithGoogleAsync()}
       >
         <Text style={styles.loginText}>LOGIN</Text>

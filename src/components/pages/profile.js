@@ -21,62 +21,10 @@ function Profile() {
   const [email, onChangeEmail] = React.useState(null);
   const [city, onChangeCity] = React.useState(null);
 
-  // const createTwoButtonAlert = () =>
-  // Alert.alert(
-  //   "Alert Title",
-  //   "My Alert Msg",
-  //   [
-  //     {
-  //       text: "Cancel",
-  //       onPress: () => console.log("Cancel Pressed"),
-  //       style: "cancel"
-  //     },
-  //     { text: "OK", onPress: () => console.log("OK Pressed") }
-  //   ]
-  // );
-
-  // const myCustomShare = async() => {
-  //   // const shareOptions = {
-  //   //   url: files.appLogo,
-  //   //   // urls: [files.image1, files.image2]
-  //   // }
-
-  //   try {
-  //     const ShareResponse = await Share.open(shareOptions);
-  //     console.log(JSON.stringify(ShareResponse));
-  //   } catch(error) {
-  //     console.log('Error => ', error);
-  //   }
-  // };
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.userInfoSection}>
-          {/* <View style={{ flexDirection: 'row', marginTop: 15 }}> */}
-            {/* <Avatar.Image
-            source={{
-              uri: 'https://api.adorable.io/avatars/80/abott@adorable.png',
-            }}
-            size={80}
-          /> */}
-             {/* <View style={{ marginLeft: 20 }}>
-              <Title
-                style={[
-                  styles.title,
-                  {
-                    marginTop: 15,
-                    marginBottom: 5,
-                  },
-                ]}
-              >
-                John Doe
-              </Title>
-
-             
-              <Caption style={styles.caption}>@user_name</Caption>
-            </View> */}
-          {/* </View> */}
         </View> 
 
         
@@ -117,16 +65,12 @@ function Profile() {
 
           <View style={styles.row}>
             <Icon name="email" color="#777777" size={30} />
-            {/* <Text style={{ color: '#777777', marginLeft: 20 }}>
-              john_doe@email.com
-            </Text> */}
 
             <TextInput
               style={styles.input}
               onChangeEmail={onChangeEmail}
               value={email}
               placeholder="Email"
-              // keyboardType="email"
             />
           </View>
         </View>
@@ -175,13 +119,8 @@ function Profile() {
               }}
             />
             <Title name="address">6100 Main St, Houston, TX 77005</Title>
-            {/* <Paragraph>Card content</Paragraph> */}
-            {/* <Button color="red" outline="10%" type="submit">
-              {' '}
-              Delete
-            </Button> */}
+            
           </Card.Content>
-          {/* <View> */}
             <Button
               styles={styles.deleteBtn}
               title="Delete"
@@ -194,25 +133,9 @@ function Profile() {
             >Delete</Button> 
           {/* </View> */}
         </Card>
-        {/* <View style={styles.container}>
-      <Button title={"2-Button Alert"} onPress={createTwoButtonAlert} />
-      </View> */}
+       
          <View paddingVertical={10} />
-        {/* <Card>
-          <Card.Content>
-            <Card.Cover
-              source={{
-                uri: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1492&q=80',
-              }}
-            />
-            <Title name="address">6245 Main St, Houston, TX 77010</Title>
-            <Paragraph>Card content</Paragraph>
-            <Button color="red" outline="10%" type="submit">
-              {' '}
-              Delete
-            </Button>
-          </Card.Content>
-        </Card> */}
+        
     </ScrollView>
     </SafeAreaView>
   );

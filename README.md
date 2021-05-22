@@ -4,15 +4,15 @@
 
 ## Description
 
-This is an application for booking room and boarding when you don't need a full apartment or house for rent. When you are looking for the minimum place to stay and sleep without the hassle of paying for full apartments or houses, we are here to solve your problem. Our application will connect the user with property owners that will host their available rooms for boarding. Property owners who have spare bedrooms they want to share out can come sign up to get with users who might need a room for boarding that are looking in the area. 
+This is an application for booking room and boarding for rent. When you are looking for the minimum place to stay and sleep without the hassle of paying for full apartments or houses, we are here to solve your problem. Our application will connect the user with property owners that will host their available rooms for boarding. Property owners who have spare bedrooms they want to rent out to users. 
 
-We will have the web portal for users on their desktop and mobile app if they are on their mobile phones. Stay tuned for more information! 
+This is a mobile app for users to use to view and post listings. 
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Deployment](#deployment)
-- [User Story](#userStory)
+- [User Story](#userstory)
 - [Team Members](#teammembers)
 - [Credits](#credits)
 - [Resources](#resources)
@@ -34,25 +34,30 @@ Part 2 (Mobile) Repo)
 3. "Npm install"
 4. In terminal "npm start" OR "expo start"
 
-## Deployment
+# Deployment
 
-# Mobile Version
+![Screenshot](./images/photo1.png)
+![Screenshot](./images/photo2.png)
+![Screenshot](./images/photo3.png)
+![Screenshot](./images/photo4.png)
 
-Expo: https://expo.io/@erumdhukka/projects/stayrnb
+## Mobile Version
+
+Expo: https://expo.io/@erumdhukka/projects/stay_rnb
 Repo: https://github.com/erumd/Stay-RnB-Mobile
 Backend Repo: https://github.com/erumd/Stay-RnB-Mobile-Backend
 
-# Web Version
+## Web Version
 
 Repo: https://github.com/code-monkey713/Stay-RnB-Web
 Web Deployment: https://stay-rnb.herokuapp.com/
 
-# Server-Side
+## Server-Side
 
 Repo: https://github.com/Joeseff6/Stay-RnB-Backend
 Server Deployment: https://stay-rnb-server.herokuapp.com/
 
-## User Story
+# User Story
 
 AS A owner
 I WANT a post listing
@@ -79,7 +84,15 @@ Tony Tran - Desktop/React application development/Project Manager
 - GitHub: https://github.com/Joeseff6
 - Email: josephsoria6@gmail.com
 
-## License
+## Resources
+This was a hard project to learn and complete. I read up on lots of resources online and watched videos to guide me. Here are some that really helped.
+[Pradip Debnath](https://www.youtube.com/watch?v=mjJzaiGkaQA&ab_channel=PradipDebnath)
+[React Native Documentation](https://reactnative.dev/)
+[Youssef El Habchi](https://reactnativemaster.com/react-native-login-screen-tutorial)
+[Vadim Savin]
+https://www.youtube.com/watch?v=iQ_0Fd_N3Mk&t=1824s&ab_channel=VadimSavin 
+https://www.youtube.com/watch?v=ZxkmTsEYfg8&ab_channel=VadimSavin
+# License
 
 MIT License
 

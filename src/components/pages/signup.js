@@ -58,7 +58,6 @@ function signUp() {
       setError(err.message);
     }
   };
-  // console.log (firebaseSignUp, "firebase");
 
   return (
     <View style={styles.containerLogin}>
@@ -67,38 +66,6 @@ function signUp() {
         <View paddingVertical={20} />
 
         <Text style={styles.logo}>Stay RnB</Text>
-        {/* <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="First Name..."
-            placeholderTextColor="#003f5c"
-            onChangeText={() => {
-              setFirstname(Firstname);
-            }}
-          />
-        </View> */}
-
-        {/* <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="Last Name..."
-            placeholderTextColor="#003f5c"
-            onChangeText={() => {
-              setLastname(Lastname);
-            }}
-          />
-        </View> */}
-
-        {/* <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="Username..."
-            placeholderTextColor="#003f5c"
-            onChangeText={() => {
-              setUsername(Username);
-            }}
-          />
-        </View> */}
 
         <View style={styles.inputView}>
           <TextInput
@@ -124,48 +91,15 @@ function signUp() {
         </View>
         {error ? <Text style={{ color: 'red' }}>{error}</Text> : null}
 
-        {/* <View>
-          <Text style={styles.toggleUser}>
-            {' '}
-            User
-            <Switch
-              trackColor={{ false: '#767577', true: 'turquoise' }}
-              thumbColor={isEnabledU ? '#f5dd4b' : '#465881'}
-              ios_backgroundColor="#3e3e3e"
-              onValueChange={toggleSwitchU}
-              value={isEnabledU}
-            />
-          </Text>
-        </View> */}
-
-        {/* <View>
-          <Text style={styles.toggleHost}>
-            {' '}
-            Host
-            <Switch
-              trackColor={{ false: '#767577', true: 'turquoise' }}
-              thumbColor={isEnabledH ? '#f5dd4b' : '#465881'}
-              ios_backgroundColor="#3e3e3e"
-              onValueChange={toggleSwitchH}
-              value={isEnabledH}
-            />
-          </Text>
-        </View> */}
-
         <TouchableOpacity></TouchableOpacity>
         <TouchableOpacity
           style={styles.loginBtn}
-          // onPress={() =>
-          //   Alert.alert('Sign-up complete ✅ . Go to Profile to finish. ')
-          // }
-          // onPress={() => firebaseSignUp}
           onPress={() => navigation.navigate('Profile')} 
         >
           
           <Text style={styles.loginText}>SIGNUP</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          {/* <Text style={styles.loginText}>LOGIN</Text> */}
         </TouchableOpacity>
       </ScrollView>
     </View>
@@ -176,14 +110,10 @@ export default signUp;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // backgroundColor: '#003f5c',
+   
   },
   containerLogin: {
     flex: 1,
-    // marginTop: 30, //adds gray background
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#003f5c',
